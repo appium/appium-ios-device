@@ -1,0 +1,8 @@
+node_modules
+build
+coverage
+*.log
+.DS_Store
+package-lock.json*
+.nyc_output/
+test-results.xml
