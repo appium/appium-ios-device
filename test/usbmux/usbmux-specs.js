@@ -1,5 +1,5 @@
 import { Usbmux } from '../..';
-import fs from 'fs';
+import {fs} from 'appium-support';
 import path from 'path';
 import net from 'net';
 
@@ -22,7 +22,7 @@ describe('usbmux', function () {
   });
 
   it('read usbmux message', async function () {
-    let content = fs.readFileSync(path.resolve(__dirname, '..', '..', '..', 'test', 'fixtures', 'usbmuxlistdevicemessage.bin'));
+    let content = await fs.readFile(path.resolve(__dirname, '..', '..', '..', 'test', 'fixtures', 'usbmuxlistdevicemessage.bin'));
     this.server.on('connection', function (socketClient) {
       socketClient.write(content);
     });
@@ -31,7 +31,7 @@ describe('usbmux', function () {
   });
 
   it('read concatanated message', async function () {
-    let content = fs.readFileSync(path.resolve(__dirname, '..', '..', '..', 'test', 'fixtures', 'usbmuxlistdevicemessage.bin'));
+    let content = await fs.readFile(path.resolve(__dirname, '..', '..', '..', 'test', 'fixtures', 'usbmuxlistdevicemessage.bin'));
     let doubleContent = Buffer.concat([content, content]);
     this.server.on('connection', function (socketClient) {
       socketClient.write(doubleContent);
@@ -43,7 +43,7 @@ describe('usbmux', function () {
   });
 
   it('find correct device', async function () {
-    let content = fs.readFileSync(path.resolve(__dirname, '..', '..', '..', 'test', 'fixtures', 'usbmuxlistdevicemessage.bin'));
+    let content = await fs.readFile(path.resolve(__dirname, '..', '..', '..', 'test', 'fixtures', 'usbmuxlistdevicemessage.bin'));
     this.server.on('connection', function (socketClient) {
       socketClient.write(content);
     });
