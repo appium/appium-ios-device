@@ -1,5 +1,5 @@
 import { Usbmux } from '../..';
-import {fs} from 'appium-support';
+import { fs } from 'appium-support';
 import path from 'path';
 import net from 'net';
 
@@ -8,8 +8,13 @@ import chaiAsPromised from 'chai-as-promised';
 
 chai.should();
 chai.use(chaiAsPromised);
+let deviceListFixture;
 
 describe('usbmux', function () {
+  before(async function () {
+    const file = path.resolve(__dirname, '..', '..', '..', 'test', 'fixtures', 'usbmuxlistdevicemessage.bin');
+    deviceListFixture = await fs.readFile(file);
+  });
   beforeEach(function () {
     this.server = net.createServer();
     this.server.listen();
@@ -22,17 +27,15 @@ describe('usbmux', function () {
   });
 
   it('read usbmux message', async function () {
-    let content = await fs.readFile(path.resolve(__dirname, '..', '..', '..', 'test', 'fixtures', 'usbmuxlistdevicemessage.bin'));
     this.server.on('connection', function (socketClient) {
-      socketClient.write(content);
+      socketClient.write(deviceListFixture);
     });
     let devices = await this.usbmux.listDevices();
     devices.length.should.be.equal(1);
   });
 
   it('read concatanated message', async function () {
-    let content = await fs.readFile(path.resolve(__dirname, '..', '..', '..', 'test', 'fixtures', 'usbmuxlistdevicemessage.bin'));
-    let doubleContent = Buffer.concat([content, content]);
+    let doubleContent = Buffer.concat([deviceListFixture, deviceListFixture]);
     this.server.on('connection', function (socketClient) {
       socketClient.write(doubleContent);
     });
@@ -43,9 +46,8 @@ describe('usbmux', function () {
   });
 
   it('find correct device', async function () {
-    let content = await fs.readFile(path.resolve(__dirname, '..', '..', '..', 'test', 'fixtures', 'usbmuxlistdevicemessage.bin'));
     this.server.on('connection', function (socketClient) {
-      socketClient.write(content);
+      socketClient.write(deviceListFixture);
     });
     let udid = '63c3d055c4f83e960e5980fa68be0fbf7d4ba74c';
     let device = await this.usbmux.findDevice(udid);
