@@ -1,7 +1,7 @@
+import { Usbmux } from '../..';
 import fs from 'fs';
 import path from 'path';
 import net from 'net';
-import Usbmux from '../../lib/usbmux/usbmux';
 
 import chai from 'chai';
 import chaiAsPromised from 'chai-as-promised';
