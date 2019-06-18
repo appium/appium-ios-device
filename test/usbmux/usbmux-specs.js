@@ -9,11 +9,14 @@ import chaiAsPromised from 'chai-as-promised';
 chai.should();
 chai.use(chaiAsPromised);
 let deviceListFixture;
+let deviceConnectFixture;
 
 describe('usbmux', function () {
   before(async function () {
-    const file = path.resolve(__dirname, '..', '..', '..', 'test', 'fixtures', 'usbmuxlistdevicemessage.bin');
-    deviceListFixture = await fs.readFile(file);
+    const deviceListFile = path.resolve(__dirname, '..', '..', '..', 'test', 'fixtures', 'usbmuxlistdevicemessage.bin');
+    deviceListFixture = await fs.readFile(deviceListFile);
+    const deviceConnectFile = path.resolve(__dirname, '..', '..', '..', 'test', 'fixtures', 'usbmuxconnectmessage.bin');
+    deviceConnectFixture = await fs.readFile(deviceConnectFile);
   });
   beforeEach(function () {
     this.server = net.createServer();
@@ -52,5 +55,13 @@ describe('usbmux', function () {
     let udid = '63c3d055c4f83e960e5980fa68be0fbf7d4ba74c';
     let device = await this.usbmux.findDevice(udid);
     device.Properties.SerialNumber.should.be.equal(udid);
+  });
+
+  it('should connect to correct device', async function () {
+    this.server.on('connection', function (socketClient) {
+      socketClient.write(deviceConnectFixture);
+    });
+    let udid = '63c3d055c4f83e960e5980fa68be0fbf7d4ba74c';
+    await this.usbmux.connectLockdown(udid);
   });
 });
