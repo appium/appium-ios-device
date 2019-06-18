@@ -26,7 +26,7 @@ describe('usbmux', function () {
     this.server.close();
   });
 
-  it('read usbmux message', async function () {
+  it('should read usbmux message', async function () {
     this.server.on('connection', function (socketClient) {
       socketClient.write(deviceListFixture);
     });
@@ -34,7 +34,7 @@ describe('usbmux', function () {
     devices.length.should.be.equal(1);
   });
 
-  it('read concatanated message', async function () {
+  it('should read concatanated message', async function () {
     let doubleContent = Buffer.concat([deviceListFixture, deviceListFixture]);
     this.server.on('connection', function (socketClient) {
       socketClient.write(doubleContent);
@@ -45,7 +45,7 @@ describe('usbmux', function () {
     devices.length.should.be.equal(1);
   });
 
-  it('find correct device', async function () {
+  it('should find correct device', async function () {
     this.server.on('connection', function (socketClient) {
       socketClient.write(deviceListFixture);
     });
