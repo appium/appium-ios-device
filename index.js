@@ -1,3 +1,3 @@
-import { default as sample } from './lib/sample';
+import { default as Usbmux } from './lib/usbmux/usbmux';
 
-export { sample };
+export { Usbmux };
