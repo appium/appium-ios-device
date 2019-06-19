@@ -37,6 +37,10 @@ describe('usbmux', function () {
     devices.length.should.be.equal(1);
   });
 
+  it('should fail due to timeout', async function () {
+    await this.usbmux.listDevices(-1).should.eventually.be.rejected;
+  });
+
   it('should read concatanated message', async function () {
     let doubleContent = Buffer.concat([deviceListFixture, deviceListFixture]);
     this.server.on('connection', function (socketClient) {

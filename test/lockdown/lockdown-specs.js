@@ -38,6 +38,10 @@ describe('lockdown', function () {
     await this.lockdown.getValue({ Key: 'ProductName'});
   });
 
+  it('should fail due to timeout', async function () {
+    await this.lockdown.getValue({ Key: 'ProductName'}, -1).should.eventually.be.rejected;
+  });
+
   it('lockdown query type', async function () {
     this.server.on('connection', function (socketClient) {
       socketClient.write(queryTypeFixture);
