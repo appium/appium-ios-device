@@ -1,36 +1,30 @@
-import { getConnectedDevices } from '..';
-import { fs } from 'appium-support';
-import path from 'path';
-import net from 'net';
+import { getConnectedDevices, getOSVersion } from '..';
 import chai from 'chai';
+import { getServerWithFixtures, fixtures, UDID } from './fixtures';
 
 
 chai.should();
-let deviceListFixture;
 
+describe('utilities', function () {
+  let server;
+  let socket;
 
-describe('usbmux', function () {
-
-
-  before(async function () {
-    const deviceListFile = path.resolve(__dirname, '..', '..', 'test', 'fixtures', 'usbmuxlistdevicemessage.bin');
-    deviceListFixture = await fs.readFile(deviceListFile);
-  });
-  beforeEach(function () {
-    this.server = net.createServer();
-    this.server.listen();
-    this.socket = net.connect(this.server.address());
-  });
   afterEach(function () {
-    this.server.close();
-    this.socket.destroy();
+    if (server) {
+      server.close();
+    }
   });
 
   it('should get unique udids', async function () {
-    this.server.on('connection', function (socketClient) {
-      socketClient.write(deviceListFixture);
-    });
-    const udids = await getConnectedDevices(this.socket);
+    ({server, socket} = await getServerWithFixtures(fixtures.DEVICE_LIST));
+    const udids = await getConnectedDevices(socket);
     udids.length.should.be.equal(1);
+    udids[0].should.eql(UDID);
+  });
+
+  it('should get product version', async function () {
+    ({server, socket} = await getServerWithFixtures(fixtures.DEVICE_LIST, fixtures.DEVICE_CONNECT, fixtures.LOCKDOWN_GET_VALUE_OS_VERSION));
+    const osVersion = await getOSVersion(UDID, socket);
+    osVersion.should.be.equal('12.3.1');
   });
 });
