@@ -1,71 +1,64 @@
 import { Usbmux } from '../..';
-import { fs } from 'appium-support';
-import path from 'path';
-import net from 'net';
-
 import chai from 'chai';
-import chaiAsPromised from 'chai-as-promised';
+import { getServerWithFixtures, fixtures, UDID } from '../fixtures';
+
 
 chai.should();
-chai.use(chaiAsPromised);
-let deviceListFixture;
-let deviceConnectFixture;
 
 describe('usbmux', function () {
-  before(async function () {
-    const deviceListFile = path.resolve(__dirname, '..', '..', '..', 'test', 'fixtures', 'usbmuxlistdevicemessage.bin');
-    deviceListFixture = await fs.readFile(deviceListFile);
-    const deviceConnectFile = path.resolve(__dirname, '..', '..', '..', 'test', 'fixtures', 'usbmuxconnectmessage.bin');
-    deviceConnectFixture = await fs.readFile(deviceConnectFile);
-  });
-  beforeEach(function () {
-    this.server = net.createServer();
-    this.server.listen();
-    let socket = net.connect(this.server.address());
-    this.usbmux = new Usbmux(socket);
-  });
+  let usbmux;
+  let server;
+  let socket;
+
   afterEach(function () {
-    this.usbmux.close();
-    this.server.close();
+    try {
+      usbmux.close();
+    } catch (ign) {}
+    try {
+      server.close();
+    } catch (ign) {}
   });
 
   it('should read usbmux message', async function () {
-    this.server.on('connection', function (socketClient) {
-      socketClient.write(deviceListFixture);
-    });
-    let devices = await this.usbmux.listDevices();
+    ({server, socket} = await getServerWithFixtures(fixtures.DEVICE_LIST));
+    usbmux = new Usbmux(socket);
+
+    let devices = await usbmux.listDevices();
     devices.length.should.be.equal(1);
   });
 
   it('should fail due to timeout', async function () {
-    await this.usbmux.listDevices(-1).should.eventually.be.rejected;
+    ({server, socket} = await getServerWithFixtures());
+    usbmux = new Usbmux(socket);
+
+    await usbmux.listDevices(-1).should.eventually.be.rejected;
   });
 
   it('should read concatanated message', async function () {
-    let doubleContent = Buffer.concat([deviceListFixture, deviceListFixture]);
-    this.server.on('connection', function (socketClient) {
-      socketClient.write(doubleContent);
-    });
-    let devices = await this.usbmux.listDevices();
+    ({server, socket} = await getServerWithFixtures(fixtures.DEVICE_LIST, fixtures.DEVICE_LIST_2));
+    usbmux = new Usbmux(socket);
+
+    let devices = await usbmux.listDevices();
     devices.length.should.be.equal(1);
-    devices = await this.usbmux.listDevices();
+    devices[0].DeviceID.should.be.equal(1);
+
+    devices = await usbmux.listDevices();
     devices.length.should.be.equal(1);
+    devices[0].DeviceID.should.be.equal(2);
   });
 
   it('should find correct device', async function () {
-    this.server.on('connection', function (socketClient) {
-      socketClient.write(deviceListFixture);
-    });
-    let udid = '63c3d055c4f83e960e5980fa68be0fbf7d4ba74c';
-    let device = await this.usbmux.findDevice(udid);
-    device.Properties.SerialNumber.should.be.equal(udid);
+    ({server, socket} = await getServerWithFixtures(fixtures.DEVICE_LIST));
+    usbmux = new Usbmux(socket);
+
+    let device = await usbmux.findDevice(UDID);
+    device.Properties.SerialNumber.should.be.equal(UDID);
   });
 
   it('should connect to correct device', async function () {
-    this.server.on('connection', function (socketClient) {
-      socketClient.write(deviceConnectFixture);
-    });
-    let udid = '63c3d055c4f83e960e5980fa68be0fbf7d4ba74c';
-    await this.usbmux.connectLockdown(udid);
+    ({server, socket} = await getServerWithFixtures(fixtures.DEVICE_LIST, fixtures.DEVICE_CONNECT));
+    usbmux = new Usbmux(socket);
+
+    await usbmux.connectLockdown(UDID);
   });
 });
