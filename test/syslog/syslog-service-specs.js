@@ -1,6 +1,6 @@
 import B from 'bluebird';
 import chai from 'chai';
-import SyslogService from '../../lib/syslog/syslog-service';
+import SyslogService from '../../lib/syslog';
 import { getServerWithFixtures, fixtures } from '../fixtures';
 
 
