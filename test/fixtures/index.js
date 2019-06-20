@@ -15,6 +15,7 @@ const fixtures = {
   DEVICE_CONNECT: 'deviceConnect',
   LOCKDOWN_GET_VALUE_OS_VERSION: 'lockdownGetValueOsVersion',
   LOCKDOWN_QUERY_TYPE: 'lockdownQueryType',
+  SYSLOG_MESSAGES: 'syslogMessage',
 };
 
 function getFixturePath (file) {
@@ -32,6 +33,7 @@ async function initFixtures () {
     [fixtures.DEVICE_CONNECT]: await fs.readFile(getFixturePath('usbmuxconnectmessage.bin')),
     [fixtures.LOCKDOWN_GET_VALUE_OS_VERSION]: await fs.readFile(getFixturePath('lockdowngetvaluemessage.bin')),
     [fixtures.LOCKDOWN_QUERY_TYPE]: await fs.readFile(getFixturePath('lockdownquerytypemessage.bin')),
+    [fixtures.SYSLOG_MESSAGES]: await fs.readFile(getFixturePath('syslogmessages.bin')),
   };
 }
 
