@@ -1,5 +1,5 @@
-import { Lockdown } from '../../lib/lockdown/lockdown';
-import { PlistService } from '../../lib/plist-service/plist-service';
+import { Lockdown } from '../../lib/lockdown';
+import { PlistService } from '../../lib/plist-service';
 import { getServerWithFixtures, fixtures } from '../fixtures';
 import chai from 'chai';
 import chaiAsPromised from 'chai-as-promised';
