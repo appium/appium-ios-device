@@ -6,31 +6,31 @@ import chai from 'chai';
 
 
 chai.should();
-
+let deviceListFixture;
 
 
 describe('usbmux', function () {
-  let server;
-  let socket;
+
 
   before(async function () {
-    const file = path.resolve(__dirname, '..', '..', 'test', 'fixtures', 'usbmuxlistdevicemessage.bin');
-    const deviceListFixture = await fs.readFile(file);
-
-    server = net.createServer();
-    server.listen();
-    server.on('connection', function (socketClient) {
-      socketClient.write(deviceListFixture);
-    });
-
-    socket = net.connect(server.address());
+    const deviceListFile = path.resolve(__dirname, '..', '..', 'test', 'fixtures', 'usbmuxlistdevicemessage.bin');
+    deviceListFixture = await fs.readFile(deviceListFile);
   });
-  after(function () {
-    server.close();
+  beforeEach(function () {
+    this.server = net.createServer();
+    this.server.listen();
+    this.socket = net.connect(this.server.address());
+  });
+  afterEach(function () {
+    this.server.close();
+    this.socket.destroy();
   });
 
   it('should get unique udids', async function () {
-    const udids = await getConnectedDevices(socket);
+    this.server.on('connection', function (socketClient) {
+      socketClient.write(deviceListFixture);
+    });
+    const udids = await getConnectedDevices(this.socket);
     udids.length.should.be.equal(1);
   });
 });
