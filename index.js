@@ -1,4 +1,4 @@
-import { default as Usbmux } from './lib/usbmux/usbmux';
+import { default as Usbmux } from './lib/usbmux';
 import { getConnectedDevices, getOSVersion, startLockdownSession, startSyslogService, connectPort } from './lib/utilities';
 
 
