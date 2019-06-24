@@ -1,8 +1,7 @@
 import { default as Usbmux } from './lib/usbmux';
-import { getConnectedDevices, getOSVersion, getDeviceTime, startLockdownSession,
-         startSyslogService, startWebInspectorService, connectPort } from './lib/utilities';
+import * as utilities from './lib/utilities';
+import * as services from './lib/services';
 
 
-export { Usbmux, getConnectedDevices, getOSVersion, getDeviceTime, startLockdownSession,
-  startSyslogService, startWebInspectorService, connectPort };
+export { Usbmux, utilities, services };
 export default Usbmux;
