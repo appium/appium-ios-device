@@ -14,6 +14,7 @@ const fixtures = {
   DEVICE_LIST_2: 'deviceList2',
   DEVICE_CONNECT: 'deviceConnect',
   LOCKDOWN_GET_VALUE_OS_VERSION: 'lockdownGetValueOsVersion',
+  LOCKDOWN_GET_VALUE_TIME: 'lockdownGetValueTime',
   LOCKDOWN_QUERY_TYPE: 'lockdownQueryType',
   SYSLOG_MESSAGES: 'syslogMessage',
   WEBINSPECTOR_MESSAGES: 'webinspector'
@@ -33,6 +34,7 @@ async function initFixtures () {
     [fixtures.DEVICE_LIST_2]: await fs.readFile(getFixturePath('usbmuxlistdevicemessage2.bin')),
     [fixtures.DEVICE_CONNECT]: await fs.readFile(getFixturePath('usbmuxconnectmessage.bin')),
     [fixtures.LOCKDOWN_GET_VALUE_OS_VERSION]: await fs.readFile(getFixturePath('lockdowngetvaluemessage.bin')),
+    [fixtures.LOCKDOWN_GET_VALUE_TIME]: await fs.readFile(getFixturePath('lockdowngettimemessage.bin')),
     [fixtures.LOCKDOWN_QUERY_TYPE]: await fs.readFile(getFixturePath('lockdownquerytypemessage.bin')),
     [fixtures.SYSLOG_MESSAGES]: await fs.readFile(getFixturePath('syslogmessages.bin')),
     [fixtures.WEBINSPECTOR_MESSAGES]: await fs.readFile(getFixturePath('webinspectormessages.bin')),
