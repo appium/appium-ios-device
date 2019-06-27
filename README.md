@@ -19,6 +19,7 @@ Appium API for dealing with iOS devices. This is mainly a rewrite of libimobiled
 - `utilities.getConnectedDevices`
 - `utilities.getOSVersion`
 - `utilities.getDeviceTime`
+- `utilities.getDeviceName`
 - `utilities.startLockdownSession`
 - `utilities.connectPort`
 - `utilities.connectPortSSL`
