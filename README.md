@@ -16,15 +16,15 @@ Appium API for dealing with iOS devices. This is mainly a rewrite of libimobiled
 
 ### Methods
 
--`utilities.getConnectedDevices`
--`utilities.getOSVersion`
--`utilities.getDeviceTime`
--`utilities.startLockdownSession`
--`utilities.connectPort`
--`utilities.connectPortSSL`
--`services.startSyslogService`
--`services.startWebInspectorService`
--`services.startInstallationProxyService`
+- `utilities.getConnectedDevices`
+- `utilities.getOSVersion`
+- `utilities.getDeviceTime`
+- `utilities.startLockdownSession`
+- `utilities.connectPort`
+- `utilities.connectPortSSL`
+- `services.startSyslogService`
+- `services.startWebInspectorService`
+- `services.startInstallationProxyService`
 
 ### Usage
 
