@@ -35,6 +35,7 @@
     "bplist-creator": "0.0.8",
     "bplist-parser": "^0.1.1",
     "plist": "^3.0.1",
+    "semver": "^6.1.2",
     "source-map-support": "^0.5.5"
   },
   "scripts": {
