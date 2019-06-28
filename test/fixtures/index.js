@@ -18,6 +18,7 @@ const fixtures = {
   LOCKDOWN_QUERY_TYPE: 'lockdownQueryType',
   SYSLOG_MESSAGES: 'syslogMessage',
   WEBINSPECTOR_MESSAGES: 'webinspector',
+  WEBINSPECTOR_PARTIAL_MESSAGES: 'webinspectorPartialMessages',
   INSTALLATION_PROXY_LIST_MESSAGE: 'installationProxyListMessage'
 };
 
@@ -38,6 +39,7 @@ async function initFixtures () {
     [fixtures.LOCKDOWN_GET_VALUE_TIME]: await fs.readFile(getFixturePath('lockdowngettimemessage.bin')),
     [fixtures.LOCKDOWN_QUERY_TYPE]: await fs.readFile(getFixturePath('lockdownquerytypemessage.bin')),
     [fixtures.SYSLOG_MESSAGES]: await fs.readFile(getFixturePath('syslogmessages.bin')),
+    [fixtures.WEBINSPECTOR_PARTIAL_MESSAGES]: await fs.readFile(getFixturePath('webinspectorpartialmessages.bin')),
     [fixtures.WEBINSPECTOR_MESSAGES]: await fs.readFile(getFixturePath('webinspectormessages.bin')),
     [fixtures.INSTALLATION_PROXY_LIST_MESSAGE]: await fs.readFile(getFixturePath('installationproxylistmessage.bin')),
   };
