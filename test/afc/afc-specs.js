@@ -28,4 +28,11 @@ describe('afc', function () {
     service = new AfcService(socket);
     await service.deleteDirectory('something');
   });
+
+  it('should list directory', async function () {
+    ({server, socket} = await getServerWithFixtures(fixtures.AFC_LIST_DIR_RESPONSE));
+    service = new AfcService(socket);
+    const items = await service.listDirectory('/');
+    items.should.contain('Photos');
+  });
 });
