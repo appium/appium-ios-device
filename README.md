@@ -26,6 +26,8 @@ Appium API for dealing with iOS devices. This is mainly a rewrite of libimobiled
 - `services.startSyslogService`
 - `services.startWebInspectorService`
 - `services.startInstallationProxyService`
+- `services.startSimulateLocationService`
+- `services.startAfcService`
 
 ### Usage
 
