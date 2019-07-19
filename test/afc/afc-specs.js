@@ -35,4 +35,16 @@ describe('afc', function () {
     const items = await service.listDirectory('/');
     items.should.contain('Photos');
   });
+
+  it('should get file info', async function () {
+    ({server, socket} = await getServerWithFixtures(fixtures.AFC_FILE_INFO_RESPONSE));
+    service = new AfcService(socket);
+    const info = await service.getFileInfo('Photos');
+    info.st_birthtime.should.be.equal('1494244521000000000');
+    info.st_blocks.should.be.equal('0');
+    info.st_ifmt.should.be.equal('S_IFDIR');
+    info.st_mtime.should.be.equal('1494244521000000000');
+    info.st_nlink.should.be.equal('2');
+    info.st_size.should.be.equal('64');
+  });
 });

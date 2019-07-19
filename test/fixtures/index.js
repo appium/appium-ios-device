@@ -23,7 +23,8 @@ const fixtures = {
   WEBINSPECTOR_PARTIAL_MESSAGES: 'webinspectorPartialMessages',
   INSTALLATION_PROXY_LIST_MESSAGE: 'installationProxyListMessage',
   AFC_SUCCESS_RESPONSE: 'afcSuccessResponse',
-  AFC_LIST_DIR_RESPONSE: 'afcListDirResponse'
+  AFC_LIST_DIR_RESPONSE: 'afcListDirResponse',
+  AFC_FILE_INFO_RESPONSE: 'afcFileInfoResponse'
 };
 
 function getFixturePath (file) {
@@ -49,7 +50,8 @@ async function initFixtures () {
     [fixtures.WEBINSPECTOR_MESSAGES]: await fs.readFile(getFixturePath('webinspectormessages.bin')),
     [fixtures.INSTALLATION_PROXY_LIST_MESSAGE]: await fs.readFile(getFixturePath('installationproxylistmessage.bin')),
     [fixtures.AFC_SUCCESS_RESPONSE]: await fs.readFile(getFixturePath('afcsuccessresponse.bin')),
-    [fixtures.AFC_LIST_DIR_RESPONSE]: await fs.readFile(getFixturePath('afclistdirresponse.bin'))
+    [fixtures.AFC_LIST_DIR_RESPONSE]: await fs.readFile(getFixturePath('afclistdirresponse.bin')),
+    [fixtures.AFC_FILE_INFO_RESPONSE]: await fs.readFile(getFixturePath('afcfileinforesponse.bin'))
   };
 }
 
