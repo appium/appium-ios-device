@@ -26,4 +26,10 @@ describe('installation proxy', function () {
     const appMap = await installationServiceProxy.listApplications();
     appMap.should.have.property('com.apple.test.WebDriverAgentRunner-Runner');
   });
+
+  it('should install an application successfully', async function () {
+    ({server, socket} = await getServerWithFixtures(fixtures.INSTALLATION_PROXY_INSTALL_MESSAGE));
+    installationServiceProxy = new InstallationServiceProxy(new PlistService(socket));
+    await installationServiceProxy.installApplication('PublicStaging/app.ipa');
+  });
 });
