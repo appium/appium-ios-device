@@ -28,6 +28,8 @@ Appium API for dealing with iOS devices. This is mainly a rewrite of libimobiled
 - `services.startInstallationProxyService`
 - `services.startSimulateLocationService`
 - `services.startAfcService`
+- `services.startNotificationProxyService`
+- `services.startHouseArrestService`
 
 ### Usage
 
