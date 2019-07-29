@@ -40,11 +40,12 @@ describe('afc', function () {
     ({server, socket} = await getServerWithFixtures(fixtures.AFC_FILE_INFO_RESPONSE));
     service = new AfcService(socket);
     const info = await service.getFileInfo('Photos');
-    info.st_birthtime.should.be.equal('1494244521000000000');
-    info.st_blocks.should.be.equal('0');
-    info.st_ifmt.should.be.equal('S_IFDIR');
-    info.st_mtime.should.be.equal('1494244521000000000');
-    info.st_nlink.should.be.equal('2');
-    info.st_size.should.be.equal('64');
+    info.birthtimeMs.should.be.equal(1494244521000);
+    info.blocks.should.be.equal(0);
+    info.mtimeMs.should.be.equal(1494244521000);
+    info.nlink.should.be.equal(2);
+    info.size.should.be.equal(64);
+    info.isDirectory().should.be.equal(true);
+    info.isFile().should.be.equal(false);
   });
 });
