@@ -37,6 +37,7 @@ async function initFixtures () {
     return;
   }
 
+  // eslint-disable-next-line require-atomic-updates
   fixtureContents = {
     [fixtures.DEVICE_LIST]: await fs.readFile(getFixturePath('usbmuxlistdevicemessage.bin')),
     [fixtures.DEVICE_LIST_2]: await fs.readFile(getFixturePath('usbmuxlistdevicemessage2.bin')),
