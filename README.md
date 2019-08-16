@@ -12,6 +12,10 @@ appium-ios-device
 
 Appium API for dealing with iOS devices. This is mainly a rewrite of libimobiledevice in nodejs. The APIs allow Appium to talk directly to the phone over usbmuxd
 
+More information can be found at the links below:
+* [libimobiledevice](https://github.com/libimobiledevice/libimobiledevice)
+* [iPhone Wiki](https://www.theiphonewiki.com/)
+
 *Note*: Issue tracking for this repo has been disabled. Please use the [main Appium issue tracker](https://github.com/appium/appium/issues) instead.
 
 ### Methods
