@@ -29,7 +29,7 @@ describe('webinspector', function () {
       isSimulator: true,
       socketChunkSize: undefined,
       verbose: true,
-      verboseFull: false,
+      verboseHexDump: false,
       socketClient: socket,
     });
     let obj = {__argument: {WIRConnectionIdentifierKey: '990cc163-d8b2-4d22-8d1c-644e100a5a07'}, __selector: '_rpc_reportIdentifier:'};
@@ -46,7 +46,7 @@ describe('webinspector', function () {
       isSimulator: true,
       socketChunkSize: undefined,
       verbose: true,
-      verboseFull: false,
+      verboseHexDump: false,
       socketClient: socket,
     });
     let obj = {__argument: {WIRConnectionIdentifierKey: '990cc163-d8b2-4d22-8d1c-644e100a5a07'}, __selector: '_rpc_reportIdentifier:'};
