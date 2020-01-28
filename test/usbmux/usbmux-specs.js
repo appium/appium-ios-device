@@ -61,4 +61,12 @@ describe('usbmux', function () {
 
     await usbmux.connectLockdown(UDID);
   });
+
+  it('should swicht decoders correctly', async function () {
+    ({server, socket} = await getServerWithFixtures(fixtures.DEVICE_LIST, fixtures.USBMUX_TO_LOCKDOWN));
+    usbmux = new Usbmux(socket);
+
+    const lockdown = await usbmux.connectLockdown(UDID);
+    await lockdown.getValue({ Key: 'TimeIntervalSince1970' });
+  });
 });
