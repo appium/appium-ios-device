@@ -8,7 +8,6 @@ appium-ios-device
 
 [![Build Status](https://api.travis-ci.org/appium/appium-ios-device.png?branch=master)](https://travis-ci.org/appium/appium-ios-device)
 [![Coverage Status](https://coveralls.io/repos/appium/appium-ios-device/badge.svg?branch=master)](https://coveralls.io/r/appium/appium-ios-device?branch=master)
-[![Greenkeeper badge](https://badges.greenkeeper.io/appium/appium-ios-device.svg)](https://greenkeeper.io/)
 
 Appium API for dealing with iOS devices. This is mainly a rewrite of libimobiledevice in nodejs. The APIs allow Appium to talk directly to the phone over usbmuxd
 
