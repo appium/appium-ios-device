@@ -33,6 +33,9 @@ More information can be found at the links below:
 - `services.startNotificationProxyService`
 - `services.startHouseArrestService`
 
+### Environment
+- `USBMUXD_SOCKET_ADDRESS` follow [libusbmuxd](https://github.com/libimobiledevice/libusbmuxd) to get usbmuxd socket address from USBMUXD_SOCKET_ADDRESS environment.
+
 ### Usage
 
 This module should be used over the `utilities` and `services` modules due to the complexity of iOS communication. When a new services is implemented, it should be added and made available over the `services` module
