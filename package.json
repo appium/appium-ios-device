@@ -29,12 +29,12 @@
     "build/lib"
   ],
   "dependencies": {
+    "@appium/support": "^2.55.3",
     "@babel/runtime": "^7.0.0",
-    "appium-support": "^2.35.0",
     "bluebird": "^3.1.1",
     "lodash": "^4.17.15",
     "semver": "^7.0.0",
-    "source-map-support": "^0.5.5"
+    "source-map-support": "^0.x"
   },
   "scripts": {
     "build": "gulp transpile",
@@ -52,10 +52,10 @@
     "precommit-test"
   ],
   "devDependencies": {
-    "appium-gulp-plugins": "^5.4.0",
+    "@appium/gulp-plugins": "^6.0.0",
+    "@appium/eslint-config-appium": "^5.0.0",
     "chai": "^4.1.2",
     "chai-as-promised": "^7.1.1",
-    "eslint-config-appium": "^4.2.0",
     "gulp": "^4.0.0",
     "pre-commit": "^1.1.3"
   }
