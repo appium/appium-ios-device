@@ -1,5 +1,5 @@
 import path from 'path';
-import { fs, logger } from 'appium-support';
+import { fs, logger } from '@appium/support';
 import net from 'net';
 
 
