@@ -7,6 +7,7 @@ const DEFAULTS = require('@appium/gulp-plugins').boilerplate.DEFAULTS;
 boilerplate({
   build: 'appium-ios-device',
   files: DEFAULTS.files.concat('index.js'),
+  test: {exit: true},
   coverage: {
     files: ['./build/test/unit/**/*-specs.js', '!./build/test/functional/**'],
     verbose: false
