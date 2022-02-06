@@ -22,6 +22,7 @@ More information can be found at the links below:
 - `utilities.getOSVersion`
 - `utilities.getDeviceTime`
 - `utilities.getDeviceName`
+- `utilities.getAllDeviceValues`
 - `utilities.startLockdownSession`
 - `utilities.connectPort`
 - `utilities.connectPortSSL`
