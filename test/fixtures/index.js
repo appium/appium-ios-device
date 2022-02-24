@@ -26,7 +26,9 @@ const fixtures = {
   INSTALLATION_PROXY_INSTALL_MESSAGE: 'installationProxyInstallMessage',
   AFC_SUCCESS_RESPONSE: 'afcSuccessResponse',
   AFC_LIST_DIR_RESPONSE: 'afcListDirResponse',
-  AFC_FILE_INFO_RESPONSE: 'afcFileInfoResponse'
+  AFC_FILE_INFO_RESPONSE: 'afcFileInfoResponse',
+  INSTRUMENTS_LAUNCH_APP: 'instrumentsLaunchApp',
+  INSTRUMENTS_FPS: 'instrumentsFps',
 };
 
 function getFixturePath (file) {
@@ -56,7 +58,9 @@ async function initFixtures () {
     [fixtures.INSTALLATION_PROXY_INSTALL_MESSAGE]: await fs.readFile(getFixturePath('installationproxyinstallmessage.bin')),
     [fixtures.AFC_SUCCESS_RESPONSE]: await fs.readFile(getFixturePath('afcsuccessresponse.bin')),
     [fixtures.AFC_LIST_DIR_RESPONSE]: await fs.readFile(getFixturePath('afclistdirresponse.bin')),
-    [fixtures.AFC_FILE_INFO_RESPONSE]: await fs.readFile(getFixturePath('afcfileinforesponse.bin'))
+    [fixtures.AFC_FILE_INFO_RESPONSE]: await fs.readFile(getFixturePath('afcfileinforesponse.bin')),
+    [fixtures.INSTRUMENTS_LAUNCH_APP]: await fs.readFile(getFixturePath('instrumentslaunchapp.bin')),
+    [fixtures.INSTRUMENTS_FPS]: await fs.readFile(getFixturePath('instrumentsfps.bin'))
   };
 }
 
