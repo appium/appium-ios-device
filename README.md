@@ -33,6 +33,7 @@ More information can be found at the links below:
 - `services.startAfcService`
 - `services.startNotificationProxyService`
 - `services.startHouseArrestService`
+- `services.startInstrumentService`
 
 ### Usage
 

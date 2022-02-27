@@ -31,10 +31,14 @@
   "dependencies": {
     "@appium/support": "^2.55.3",
     "@babel/runtime": "^7.0.0",
+    "asyncbox": "^2.9.2",
     "bluebird": "^3.1.1",
+    "bplist-creator": "^0.x",
+    "bplist-parser": "^0.x",
     "lodash": "^4.17.15",
     "semver": "^7.0.0",
-    "source-map-support": "^0.x"
+    "source-map-support": "^0.x",
+    "uuid": "^8.3.2"
   },
   "scripts": {
     "build": "gulp transpile",
