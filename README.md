@@ -32,6 +32,7 @@ More information can be found at the links below:
 - `services.startNotificationProxyService`
 - `services.startHouseArrestService`
 - `services.startInstrumentService`
+- `services.startMCInstallService`
 
 ### Usage
 
