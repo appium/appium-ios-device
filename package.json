@@ -57,7 +57,7 @@
   ],
   "devDependencies": {
     "@appium/gulp-plugins": "^6.0.0",
-    "@appium/eslint-config-appium": "^5.0.0",
+    "@appium/eslint-config-appium": "^6.0.0",
     "@semantic-release/git": "^10.0.1",
     "chai": "^4.1.2",
     "chai-as-promised": "^7.1.1",
