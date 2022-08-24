@@ -18,6 +18,8 @@ jobs:
       - name: Install latest npm
         run: npm install -g npm
       - name: Install dependencies
-        run: npm install
+        run: |
+          npm install
+          npm run lint
       - name: Run unit tests
-        run: npm test
+        run: npm run test

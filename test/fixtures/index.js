@@ -32,7 +32,7 @@ const fixtures = {
 };
 
 function getFixturePath (file) {
-  return path.resolve(__dirname, '..', '..', '..', 'test', 'fixtures', file);
+  return path.resolve(__dirname, file);
 }
 
 async function initFixtures () {
