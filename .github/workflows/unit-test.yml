@@ -28,11 +28,11 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Install latest npm
-        run: npm install -g npm
-      - name: Install dependencies
+      - name: Install dev dependencies
         run: |
+          npm install -g npm
           npm install
-          npm run lint
+      - name: Run linter
+        run: npm run lint
       - name: Run unit tests
         run: npm run test
