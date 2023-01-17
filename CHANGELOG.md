@@ -1,3 +1,10 @@
+## [2.4.9](https://github.com/appium/appium-ios-device/compare/v2.4.8...v2.4.9) (2023-01-17)
+
+
+### Miscellaneous Chores
+
+* Bump semantic-release from 19.0.5 to 20.0.2 ([#103](https://github.com/appium/appium-ios-device/issues/103)) ([c21dd35](https://github.com/appium/appium-ios-device/commit/c21dd35efd1133a5e791088f780a6500d954f1d1))
+
 ## [2.4.8](https://github.com/appium/appium-ios-device/compare/v2.4.7...v2.4.8) (2022-12-14)
 
 
