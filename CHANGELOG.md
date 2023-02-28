@@ -1,3 +1,10 @@
+## [2.4.10](https://github.com/appium/appium-ios-device/compare/v2.4.9...v2.4.10) (2023-02-28)
+
+
+### Miscellaneous Chores
+
+* Improve error messages debugging ([#104](https://github.com/appium/appium-ios-device/issues/104)) ([761ef8d](https://github.com/appium/appium-ios-device/commit/761ef8d3233c9f85657645789b07989d4bd32608))
+
 ## [2.4.9](https://github.com/appium/appium-ios-device/compare/v2.4.8...v2.4.9) (2023-01-17)
 
 
