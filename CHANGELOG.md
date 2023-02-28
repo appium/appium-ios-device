@@ -1,3 +1,10 @@
+## [2.4.11](https://github.com/appium/appium-ios-device/compare/v2.4.10...v2.4.11) (2023-02-28)
+
+
+### Miscellaneous Chores
+
+* Workaround TypeError on rpc messages transformation ([#105](https://github.com/appium/appium-ios-device/issues/105)) ([e7b9c82](https://github.com/appium/appium-ios-device/commit/e7b9c820bdb16b5e29edc005e54f240e8fa9832b))
+
 ## [2.4.10](https://github.com/appium/appium-ios-device/compare/v2.4.9...v2.4.10) (2023-02-28)
 
 
