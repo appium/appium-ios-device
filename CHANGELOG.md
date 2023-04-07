@@ -1,3 +1,10 @@
+## [2.4.12](https://github.com/appium/appium-ios-device/compare/v2.4.11...v2.4.12) (2023-04-07)
+
+
+### Bug Fixes
+
+* The issue which auxBuffer cannot be correctly handled as parameter. ([#108](https://github.com/appium/appium-ios-device/issues/108)) ([727cc8c](https://github.com/appium/appium-ios-device/commit/727cc8c230261aae233686bcce2d0e232d009a15))
+
 ## [2.4.11](https://github.com/appium/appium-ios-device/compare/v2.4.10...v2.4.11) (2023-02-28)
 
 
