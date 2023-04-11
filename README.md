@@ -14,7 +14,11 @@ More information can be found at the links below:
 
 *Note*: Issue tracking for this repo has been disabled. Please use the [main Appium issue tracker](https://github.com/appium/appium/issues) instead.
 
-## Methods
+## Usage
+
+This module should be used over the `utilities` and `services` modules or exported classes in documents due to the complexity of iOS communication. When a new services is implemented, it should be added and made available over the `services` module.
+
+### Methods
 
 * `utilities.getConnectedDevices`
 * `utilities.getOSVersion`
@@ -50,10 +54,6 @@ This class simulate the procedure which xcode uses to invoke xctests.
     * **Throws**: If xctest bundle id invalid or not installed.
   * `xctest.stop()`
     * Stop xctest process.
-
-### Usage
-
-This module should be used over the `utilities` and `services` modules or exported classes in documents due to the complexity of iOS communication. When a new services is implemented, it should be added and made available over the `services` module.
 
 ## Test
 
