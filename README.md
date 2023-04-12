@@ -44,12 +44,12 @@ This module should be used over the `utilities` and `services` modules or export
 * `Xctest`
   * Allows invoking pre-installed xctest app from iOS devices. No Xcode installation is required.
 This class simulates the procedure which Xcode uses to invoke xctests.
-  * `new Xctest(udid, xctestBundleId, targetBundleId, productModuleName)`
+  * `new Xctest(udid, xctestBundleId, targetBundleId, opts)`
     * `udid` - `string` Device udid.
     * `xctestBundleId` - `string` - Bundle Id of xctest app on device. The app must be installed on device.
     * `targetBundleId` - `string` - Test target bundle id. `null` by default.
-    * `opts` - addition options to specific XCTestConfiguration and app launch env.
-      * `conf` - properties to override in XCTestConfiguration
+    * `opts` - optional addition options to specific XCTestConfiguration and app launch env.
+      * `conf` - properties to override in XCTestConfiguration.
         * `productModuleName` - `string | null`
         * `targetApplicationArguments` - `string[] | null`
         * `testsToRun` - `string[] | null`
