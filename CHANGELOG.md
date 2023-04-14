@@ -1,3 +1,10 @@
+## [2.5.0](https://github.com/appium/appium-ios-device/compare/v2.4.12...v2.5.0) (2023-04-14)
+
+
+### Features
+
+* add xctest class which can be used to start WDA ([#110](https://github.com/appium/appium-ios-device/issues/110)) ([f3740fd](https://github.com/appium/appium-ios-device/commit/f3740fd6a9ea83c9df34a50c97e56abc69fea077))
+
 ## [2.4.12](https://github.com/appium/appium-ios-device/compare/v2.4.11...v2.4.12) (2023-04-07)
 
 
