@@ -40,6 +40,7 @@ This module should be used over the `utilities` and `services` modules or export
 * `services.startInstrumentService`
 * `services.startTestmanagerdService`
 * `services.startMCInstallService`
+* `services.startImageMounterService`
 
 ### Classes
 
