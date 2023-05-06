@@ -30,6 +30,7 @@ This module should be used over the `utilities` and `services` modules or export
 * `utilities.startLockdownSession`
 * `utilities.connectPort`
 * `utilities.connectPortSSL`
+* `utilities.mountDeveloperImage`
 * `services.startSyslogService`
 * `services.startWebInspectorService`
 * `services.startInstallationProxyService`
@@ -40,6 +41,7 @@ This module should be used over the `utilities` and `services` modules or export
 * `services.startInstrumentService`
 * `services.startTestmanagerdService`
 * `services.startMCInstallService`
+* `services.startImageMounterService`
 
 ### Classes
 
