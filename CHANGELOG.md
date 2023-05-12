@@ -1,3 +1,10 @@
+## [2.5.1](https://github.com/appium/appium-ios-device/compare/v2.5.0...v2.5.1) (2023-05-12)
+
+
+### Bug Fixes
+
+* Prevent possible memory leak on logs collection ([#114](https://github.com/appium/appium-ios-device/issues/114)) ([a942cd7](https://github.com/appium/appium-ios-device/commit/a942cd7fa43e7aa39829ab14852a1f72ff60175e))
+
 ## [2.5.0](https://github.com/appium/appium-ios-device/compare/v2.4.12...v2.5.0) (2023-04-14)
 
 
