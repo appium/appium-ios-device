@@ -5,8 +5,8 @@ chai.should();
 describe('findDeveloperImage', function() {
     it('should download and return the correct developer image for a given version', async function() {
         const result = await findDeveloperImage('14.7.1', { githubRepo: 'JinjunHan/iOSDeviceSupport', subFolderList: ['iOSDeviceSupport'] });
-        result.developerImage.should.endWith('/DeveloperDiskImage.dmg');
-        result.developerImageSignature.should.endWith('/DeveloperDiskImage.dmg.signature');
+        result.developerImage.endsWith('/DeveloperDiskImage.dmg').should.be.true;
+        result.developerImageSignature.endsWith('/DeveloperDiskImage.dmg.signature').should.be.true;
         (await fs.exists(result.developerImage)).should.be.true;
         (await fs.exists(result.developerImageSignature)).should.be.true;
     });
