@@ -8,12 +8,13 @@ describe('findDeveloperImage', function () {
     it('should download and return the correct developer image for a given version', async function () {
         const result = await findDeveloperImage('14.7.1', {
             githubRepo: 'appium/appium-ios-device',
-            subFolderList: ['test', 'imagemounter']
+            subFolderList: ['test', 'imagemounter'],
+            branch: 'imagemounter'
         });
         result.developerImage.endsWith('/DeveloperDiskImage.dmg').should.be.true;
         result.developerImageSignature.endsWith('/DeveloperDiskImage.dmg.signature').should.be.true;
-        fs.exists(result.developerImage).should.eventually.be.true;
-        fs.exists(result.developerImageSignature).should.eventually.be.true;
+        (await fs.exists(result.developerImage)).should.be.true;
+        (await fs.exists(result.developerImageSignature)).should.be.true;
     });
 
     it('should throw an error if the developer image cannot be found', function () {
