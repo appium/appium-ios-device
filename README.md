@@ -72,9 +72,10 @@ When using a higher version of iOS devices with a lower version of Xcode or othe
   1. Download .dmg file with new Xcode(sometimes beta version is needed) from [Apple Developer Downloads Page](https://developer.apple.com/download/more/).
   2. Unarchive new Xcode from .dmg file without replacing old one.
   3. Find the folder named after the target iOS version in `(New Xcode.app)/Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport`. A `DeveloperDiskImage.dmg` and a `DeveloperDiskImage.dmg.signature` should be inside that folder.
-  4. Copy the folder you found from last step and paste to `(Old Xcode.app)/Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport`
-  5. Restart your old Xcode and reconnect your devices, wait for a while until the "preparing device for development" prompt disappears.
-  6. You can also mount this image using `ideviceimagemounter` binary file compiled by [libimobiledevice](https://github.com/libimobiledevice/libimobiledevice) project on your operating system.
+  4. Copy the folder you found from last step and paste to `(Old Xcode.app)/Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport`.
+  5. The operations in the above two steps are also applicable to platforms other than the iPhone. e.g. the folder for tvOS is `(Xcode.app)/Contents/Developer/Platforms/AppleTVOS.platform/DeviceSupport`.
+  6. Restart your old Xcode and reconnect your devices, wait for a while until the "preparing device for development" prompt disappears.
+  7. You can also mount this image using `ideviceimagemounter` binary file compiled by [libimobiledevice](https://github.com/libimobiledevice/libimobiledevice) project on your operating system.
 
 These operations are very cumbersome. Fortunately there are many repositories of these developer images in the open source community. The folders mentioned in the above process are zipped and uploaded into open source repositories according to different versions. You can also make your own mirror repository on GitHub in a similar way. With `services.startImageMounterService` and `utilities.fetchImageFromGithubRepo`, you can automate the whole process cross-platform.
 
