@@ -79,7 +79,7 @@ When using a higher version of iOS devices with a lower version of Xcode or othe
 
 These operations are very cumbersome. Fortunately there are many repositories of these developer images in the open source community. The folders mentioned in the above process are zipped and uploaded into open source repositories according to different versions. You can also make your own mirror repository on GitHub in a similar way. With `services.startImageMounterService` and `utilities.fetchImageFromGithubRepo`, you can automate the whole process cross-platform.
 
-As an example, assuming we are using a repo from `https://github/example/iOSDeviceSupport`. All the zip file is inside `DeviceSupportFiles/iOS` folder of root. We can check mount status and download and mount using following code:
+As an example, assuming we are using a repo from `https://github/example/iOSDeviceSupport`. All the .zip files are inside `DeviceSupportFiles/iOS` folder of root. We can check the mount status, download and mount the image using following code:
 
 ```js
 import { services, utilities } from 'appium-ios-device';
@@ -99,7 +99,7 @@ async function checkAndMountDeveloperImage(udid) {
       const downloadedImagePath = await fetchImageFromGithubRepo(udid, repoOpts);
       if (!_.isEmpty(downloadedImagePath)) {
         const {developerImage, developerImageSignature} = downloadedImagePath;
-        imageMountService.mount(developerImage, developerImageSignature);
+        await imageMountService.mount(developerImage, developerImageSignature);
       }
     }
   } catch(e) {
