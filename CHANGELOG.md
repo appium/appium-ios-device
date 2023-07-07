@@ -1,3 +1,10 @@
+## [2.5.4](https://github.com/appium/appium-ios-device/compare/v2.5.3...v2.5.4) (2023-07-07)
+
+
+### Miscellaneous Chores
+
+* Bump prettier from 2.8.8 to 3.0.0 ([#121](https://github.com/appium/appium-ios-device/issues/121)) ([65f9fd0](https://github.com/appium/appium-ios-device/commit/65f9fd0de7f8fdc572d76e92963bfbd2e9311674))
+
 ## [2.5.3](https://github.com/appium/appium-ios-device/compare/v2.5.2...v2.5.3) (2023-06-07)
 
 
