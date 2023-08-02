@@ -1,3 +1,31 @@
+## [2.5.4](https://github.com/appium/appium-ios-device/compare/v2.5.3...v2.5.4) (2023-07-07)
+
+
+### Miscellaneous Chores
+
+* Bump prettier from 2.8.8 to 3.0.0 ([#121](https://github.com/appium/appium-ios-device/issues/121)) ([65f9fd0](https://github.com/appium/appium-ios-device/commit/65f9fd0de7f8fdc572d76e92963bfbd2e9311674))
+
+## [2.5.3](https://github.com/appium/appium-ios-device/compare/v2.5.2...v2.5.3) (2023-06-07)
+
+
+### Miscellaneous Chores
+
+* Bump conventional-changelog-conventionalcommits ([#117](https://github.com/appium/appium-ios-device/issues/117)) ([a01dfbe](https://github.com/appium/appium-ios-device/commit/a01dfbe39288c1f91e6d7e6d1a67d293b9378e8b))
+
+## [2.5.2](https://github.com/appium/appium-ios-device/compare/v2.5.1...v2.5.2) (2023-05-18)
+
+
+### Miscellaneous Chores
+
+* Bump @appium/support from 3.1.11 to 4.0.0 ([#115](https://github.com/appium/appium-ios-device/issues/115)) ([8035128](https://github.com/appium/appium-ios-device/commit/80351281955f47a0cb1f6c93ec5ef7774595634a))
+
+## [2.5.1](https://github.com/appium/appium-ios-device/compare/v2.5.0...v2.5.1) (2023-05-12)
+
+
+### Bug Fixes
+
+* Prevent possible memory leak on logs collection ([#114](https://github.com/appium/appium-ios-device/issues/114)) ([a942cd7](https://github.com/appium/appium-ios-device/commit/a942cd7fa43e7aa39829ab14852a1f72ff60175e))
+
 ## [2.5.0](https://github.com/appium/appium-ios-device/compare/v2.4.12...v2.5.0) (2023-04-14)
 
 
