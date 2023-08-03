@@ -9,7 +9,7 @@ describe('findDeveloperImage', function () {
         const result = await findDeveloperImage('14.7.1', {
             githubRepo: 'appium/appium-ios-device',
             subFolderList: ['test', 'imagemounter'],
-            branch: 'imagemounter'
+            branch: 'master'
         });
         result.developerImage.endsWith('/DeveloperDiskImage.dmg').should.be.true;
         result.developerImageSignature.endsWith('/DeveloperDiskImage.dmg.signature').should.be.true;
