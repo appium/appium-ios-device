@@ -1,3 +1,10 @@
+## [2.6.0](https://github.com/appium/appium-ios-device/compare/v2.5.4...v2.6.0) (2023-08-03)
+
+
+### Features
+
+* Add ImageMounterService and auto fetch developer image if start service failed with 'InvalidService' ([#112](https://github.com/appium/appium-ios-device/issues/112)) ([9fcc5c3](https://github.com/appium/appium-ios-device/commit/9fcc5c3c864470a941a3aa84cad736e114116acb))
+
 ## [2.5.4](https://github.com/appium/appium-ios-device/compare/v2.5.3...v2.5.4) (2023-07-07)
 
 
