@@ -30,6 +30,7 @@ This module should be used over the `utilities` and `services` modules or export
 * `utilities.startLockdownSession`
 * `utilities.connectPort`
 * `utilities.connectPortSSL`
+* `utilities.fetchImageFromGithubRepo`
 * `services.startSyslogService`
 * `services.startWebInspectorService`
 * `services.startInstallationProxyService`
@@ -40,6 +41,7 @@ This module should be used over the `utilities` and `services` modules or export
 * `services.startInstrumentService`
 * `services.startTestmanagerdService`
 * `services.startMCInstallService`
+* `services.startImageMounterService`
 
 ### Classes
 
@@ -62,6 +64,51 @@ This class simulates the procedure which Xcode uses to invoke xctests.
     * **Throws**: If xctest bundle id invalid or not installed.
   * `xctest.stop()`
     * Stop xctest process.
+
+### Mount Developer Image
+
+When using a higher version of iOS devices with a lower version of Xcode or other non-macOS operating systems, most of the functions in `services` or `Xctest` may not be available because the developer image is not mounted. Sometimes it can be solved automatically by opening Xcode and waiting for a while. But more often you need to manually download and mount the developer image as follows：
+
+  1. Download .dmg file with new Xcode(sometimes beta version is needed) from [Apple Developer Downloads Page](https://developer.apple.com/download/more/).
+  2. Unarchive new Xcode from .dmg file without replacing old one.
+  3. Find the folder named after the target iOS version in `(New Xcode.app)/Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport`. A `DeveloperDiskImage.dmg` and a `DeveloperDiskImage.dmg.signature` should be inside that folder.
+  4. Copy the folder you found from last step and paste to `(Old Xcode.app)/Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport`.
+  5. The operations in the above two steps are also applicable to platforms other than the iPhone. e.g. the folder for tvOS is `(Xcode.app)/Contents/Developer/Platforms/AppleTVOS.platform/DeviceSupport`.
+  6. Restart your old Xcode and reconnect your devices, wait for a while until the "preparing device for development" prompt disappears.
+  7. You can also mount this image using `ideviceimagemounter` binary file compiled by [libimobiledevice](https://github.com/libimobiledevice/libimobiledevice) project on your operating system.
+
+These operations are very cumbersome. Fortunately there are many repositories of these developer images in the open source community. The folders mentioned in the above process are zipped and uploaded into open source repositories according to different versions. You can also make your own mirror repository on GitHub in a similar way. With `services.startImageMounterService` and `utilities.fetchImageFromGithubRepo`, you can automate the whole process cross-platform.
+
+As an example, assuming we are using a repo from `https://github/example/iOSDeviceSupport`. All the .zip files are inside `DeviceSupportFiles/iOS` folder of root. We can check the mount status, download and mount the image using following code:
+
+```js
+import { services, utilities } from 'appium-ios-device';
+import _ from 'lodash';
+const { startImageMounterService } = services;
+...
+async function checkAndMountDeveloperImage(udid) {
+  const imageMountService = await startImageMounterService(udid);
+  try {
+    const mountStatus = await imageMountService.isDeveloperImageMounted();
+    if (!mountStatus) {
+      const { fetchImageFromGithubRepo } = utilities;
+      const repoOpts = {
+        githubRepo: 'example/iOSDeviceSupport',
+        subFolderList: ['DeviceSupportFiles', 'iOS']
+      }
+      const downloadedImagePath = await fetchImageFromGithubRepo(udid, repoOpts);
+      if (!_.isEmpty(downloadedImagePath)) {
+        const {developerImage, developerImageSignature} = downloadedImagePath;
+        await imageMountService.mount(developerImage, developerImageSignature);
+      }
+    }
+  } catch(e) {
+    // Failed to mount, do something...
+  } finally {
+    imageMountService.close();
+  }
+}
+```
 
 ## Test
 
