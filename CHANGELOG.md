@@ -1,3 +1,10 @@
+## [2.6.1](https://github.com/appium/appium-ios-device/compare/v2.6.0...v2.6.1) (2023-08-14)
+
+
+### Miscellaneous Chores
+
+* Bump lint-staged from 13.3.0 to 14.0.0 ([#125](https://github.com/appium/appium-ios-device/issues/125)) ([ed1b7ac](https://github.com/appium/appium-ios-device/commit/ed1b7ac2b99dc6cb1e5cfb13e3bdc28da37503d5))
+
 ## [2.6.0](https://github.com/appium/appium-ios-device/compare/v2.5.4...v2.6.0) (2023-08-03)
 
 
