@@ -1,3 +1,10 @@
+## [2.7.0](https://github.com/appium/appium-ios-device/compare/v2.6.1...v2.7.0) (2023-08-25)
+
+
+### Features
+
+* Switch babel to typescript ([#128](https://github.com/appium/appium-ios-device/issues/128)) ([e091d64](https://github.com/appium/appium-ios-device/commit/e091d6422dc4cafb0d10bc7190917edb0d5a154c))
+
 ## [2.6.1](https://github.com/appium/appium-ios-device/compare/v2.6.0...v2.6.1) (2023-08-14)
 
 
