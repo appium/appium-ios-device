@@ -1,3 +1,10 @@
+## [2.7.2](https://github.com/appium/appium-ios-device/compare/v2.7.1...v2.7.2) (2023-08-28)
+
+
+### Miscellaneous Chores
+
+* Bump conventional-changelog-conventionalcommits ([#130](https://github.com/appium/appium-ios-device/issues/130)) ([9625967](https://github.com/appium/appium-ios-device/commit/96259679a5566a8c0f51554e21f4796408301f8d))
+
 ## [2.7.1](https://github.com/appium/appium-ios-device/compare/v2.7.0...v2.7.1) (2023-08-25)
 
 
