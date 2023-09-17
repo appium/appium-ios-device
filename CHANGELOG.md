@@ -1,3 +1,10 @@
+## [2.7.3](https://github.com/appium/appium-ios-device/compare/v2.7.2...v2.7.3) (2023-09-17)
+
+
+### Miscellaneous Chores
+
+* Bump @types/teen_process from 2.0.0 to 2.0.1 ([#134](https://github.com/appium/appium-ios-device/issues/134)) ([183f168](https://github.com/appium/appium-ios-device/commit/183f168d5e0709aa2221f77d007b6a3a886743f9))
+
 ## [2.7.2](https://github.com/appium/appium-ios-device/compare/v2.7.1...v2.7.2) (2023-08-28)
 
 
