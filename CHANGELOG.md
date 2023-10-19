@@ -1,3 +1,10 @@
+## [2.7.5](https://github.com/appium/appium-ios-device/compare/v2.7.4...v2.7.5) (2023-10-19)
+
+
+### Miscellaneous Chores
+
+* Use latest teen_process types ([70586ef](https://github.com/appium/appium-ios-device/commit/70586ef5e371b38c41ba3d3ac28ef15e3642e9f1))
+
 ## [2.7.4](https://github.com/appium/appium-ios-device/compare/v2.7.3...v2.7.4) (2023-10-19)
 
 
