@@ -1,3 +1,11 @@
+## [2.7.4](https://github.com/appium/appium-ios-device/compare/v2.7.3...v2.7.4) (2023-10-19)
+
+
+### Miscellaneous Chores
+
+* Bump lint-staged from 14.0.1 to 15.0.2 ([#145](https://github.com/appium/appium-ios-device/issues/145)) ([f2a3b60](https://github.com/appium/appium-ios-device/commit/f2a3b600fdef2de0419455994ed37e328a94c777))
+* Use latest types ([051995f](https://github.com/appium/appium-ios-device/commit/051995fa763557b2094813b30ea62b04b0d01526))
+
 ## [2.7.3](https://github.com/appium/appium-ios-device/compare/v2.7.2...v2.7.3) (2023-09-17)
 
 
