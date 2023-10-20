@@ -1,3 +1,10 @@
+## [2.7.6](https://github.com/appium/appium-ios-device/compare/v2.7.5...v2.7.6) (2023-10-20)
+
+
+### Miscellaneous Chores
+
+* Bump eslint-config-prettier from 8.10.0 to 9.0.0 ([#146](https://github.com/appium/appium-ios-device/issues/146)) ([326793c](https://github.com/appium/appium-ios-device/commit/326793c37cc64ccb0a2e5f6e3df266ca6c42b42a))
+
 ## [2.7.5](https://github.com/appium/appium-ios-device/compare/v2.7.4...v2.7.5) (2023-10-19)
 
 
