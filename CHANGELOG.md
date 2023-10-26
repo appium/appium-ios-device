@@ -1,3 +1,10 @@
+## [2.7.7](https://github.com/appium/appium-ios-device/compare/v2.7.6...v2.7.7) (2023-10-26)
+
+
+### Miscellaneous Chores
+
+* Bump @typescript-eslint/eslint-plugin from 5.62.0 to 6.9.0 ([#149](https://github.com/appium/appium-ios-device/issues/149)) ([8fa3671](https://github.com/appium/appium-ios-device/commit/8fa36710ef83ccfe314d167bdde683acc4338aef))
+
 ## [2.7.6](https://github.com/appium/appium-ios-device/compare/v2.7.5...v2.7.6) (2023-10-20)
 
 
