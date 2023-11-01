@@ -1,3 +1,10 @@
+## [2.7.8](https://github.com/appium/appium-ios-device/compare/v2.7.7...v2.7.8) (2023-11-01)
+
+
+### Miscellaneous Chores
+
+* Bump asyncbox from 2.9.4 to 3.0.0 ([#151](https://github.com/appium/appium-ios-device/issues/151)) ([c8369fa](https://github.com/appium/appium-ios-device/commit/c8369fa51ebc2f8f842b95b59793d9039d4ad637))
+
 ## [2.7.7](https://github.com/appium/appium-ios-device/compare/v2.7.6...v2.7.7) (2023-10-26)
 
 
