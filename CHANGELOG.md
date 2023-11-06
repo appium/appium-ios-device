@@ -1,3 +1,10 @@
+## [2.7.9](https://github.com/appium/appium-ios-device/compare/v2.7.8...v2.7.9) (2023-11-06)
+
+
+### Miscellaneous Chores
+
+* Bump @types/sinon from 10.0.20 to 17.0.0 ([#152](https://github.com/appium/appium-ios-device/issues/152)) ([224242f](https://github.com/appium/appium-ios-device/commit/224242ff57f8a50a202b2ef3a4556318078773c9))
+
 ## [2.7.8](https://github.com/appium/appium-ios-device/compare/v2.7.7...v2.7.8) (2023-11-01)
 
 
