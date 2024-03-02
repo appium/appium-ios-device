@@ -1,3 +1,10 @@
+## [2.7.12](https://github.com/appium/appium-ios-device/compare/v2.7.11...v2.7.12) (2024-03-02)
+
+
+### Miscellaneous Chores
+
+* add axios to package.json ([#167](https://github.com/appium/appium-ios-device/issues/167)) ([6c902a5](https://github.com/appium/appium-ios-device/commit/6c902a561b0e3aa1dd7bbbb374059537a07afa74))
+
 ## [2.7.11](https://github.com/appium/appium-ios-device/compare/v2.7.10...v2.7.11) (2024-01-17)
 
 
