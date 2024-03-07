@@ -1,3 +1,10 @@
+## [2.7.13](https://github.com/appium/appium-ios-device/compare/v2.7.12...v2.7.13) (2024-03-07)
+
+
+### Miscellaneous Chores
+
+* bump typescript ([90c4aff](https://github.com/appium/appium-ios-device/commit/90c4aff19fabec6e9531078695164d391a781a22))
+
 ## [2.7.12](https://github.com/appium/appium-ios-device/compare/v2.7.11...v2.7.12) (2024-03-02)
 
 
