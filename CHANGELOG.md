@@ -1,3 +1,10 @@
+## [2.7.14](https://github.com/appium/appium-ios-device/compare/v2.7.13...v2.7.14) (2024-04-09)
+
+
+### Miscellaneous Chores
+
+* Bump @typescript-eslint/parser from 6.21.0 to 7.6.0 ([#174](https://github.com/appium/appium-ios-device/issues/174)) ([66a4713](https://github.com/appium/appium-ios-device/commit/66a471317ed7f7d35fbfcbe806eb3c653d6ee4d2))
+
 ## [2.7.13](https://github.com/appium/appium-ios-device/compare/v2.7.12...v2.7.13) (2024-03-07)
 
 
