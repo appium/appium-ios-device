@@ -1,3 +1,10 @@
+## [2.7.16](https://github.com/appium/appium-ios-device/compare/v2.7.15...v2.7.16) (2024-05-16)
+
+
+### Miscellaneous Chores
+
+* Update dev dependencies ([e237d49](https://github.com/appium/appium-ios-device/commit/e237d496a86ca7b735f3c48121b98b348c0873b7))
+
 ## [2.7.15](https://github.com/appium/appium-ios-device/compare/v2.7.14...v2.7.15) (2024-04-09)
 
 
