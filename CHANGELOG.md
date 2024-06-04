@@ -1,3 +1,9 @@
+## [2.7.17](https://github.com/appium/appium-ios-device/compare/v2.7.16...v2.7.17) (2024-06-04)
+
+### Miscellaneous Chores
+
+* Bump semantic-release from 23.1.1 to 24.0.0 and conventional-changelog-conventionalcommits to 8.0.0 ([#178](https://github.com/appium/appium-ios-device/issues/178)) ([4e2763b](https://github.com/appium/appium-ios-device/commit/4e2763bb19c96db5c57b88cba7f54f7807f7a2f4))
+
 ## [2.7.16](https://github.com/appium/appium-ios-device/compare/v2.7.15...v2.7.16) (2024-05-16)
 
 
