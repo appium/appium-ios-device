@@ -1,3 +1,9 @@
+## [2.7.20](https://github.com/appium/appium-ios-device/compare/v2.7.19...v2.7.20) (2024-06-19)
+
+### Miscellaneous Chores
+
+* bump chai and chai-as-promised ([#182](https://github.com/appium/appium-ios-device/issues/182)) ([bafda88](https://github.com/appium/appium-ios-device/commit/bafda88f82497ad0472bd82e7b6762adbd3dffad))
+
 ## [2.7.19](https://github.com/appium/appium-ios-device/compare/v2.7.18...v2.7.19) (2024-06-19)
 
 ### Miscellaneous Chores
