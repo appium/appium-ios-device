@@ -1,3 +1,9 @@
+## [2.7.19](https://github.com/appium/appium-ios-device/compare/v2.7.18...v2.7.19) (2024-06-19)
+
+### Miscellaneous Chores
+
+* Bump uuid from 9.0.1 to 10.0.0 ([#179](https://github.com/appium/appium-ios-device/issues/179)) ([e2ae98d](https://github.com/appium/appium-ios-device/commit/e2ae98d19227e4b879dede3b5bc9852f7a653d8d))
+
 ## [2.7.18](https://github.com/appium/appium-ios-device/compare/v2.7.17...v2.7.18) (2024-06-12)
 
 ### Miscellaneous Chores
