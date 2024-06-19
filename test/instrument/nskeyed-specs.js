@@ -1,11 +1,13 @@
-import chai from 'chai';
 import {unarchive, archive, NSURL, NSUUID, NSDate} from '../../lib/instrument/transformer/nskeyed';
 import {v4} from 'uuid';
 
-
-chai.should();
-
 describe('NSKeyedArchive', function () {
+  let chai;
+
+  before(async function () {
+    chai = await import('chai');
+    chai.should();
+  });
 
   it('should parses JavaScript objects into iOS NSKeyedArchive data', function () {
     const data = {

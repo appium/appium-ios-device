@@ -1,10 +1,12 @@
-import chai from 'chai';
 import { cleanupRpcObject } from '../../lib/webinspector';
 
-
-chai.should();
-
 describe('webinspector helpers', function () {
+  let chai;
+
+  before(async function () {
+    chai = await import('chai');
+    chai.should();
+  });
 
   it('should cleanup an rpc object', function () {
     cleanupRpcObject({

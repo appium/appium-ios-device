@@ -1,14 +1,16 @@
-import chai from 'chai';
 import AfcService from '../../lib/afc';
 import { getServerWithFixtures, fixtures } from '../fixtures';
-
-
-chai.should();
 
 describe('afc', function () {
   let server;
   let socket;
   let service;
+  let chai;
+
+  before(async function () {
+    chai = await import('chai');
+    chai.should();
+  });
 
   afterEach(function () {
     service.close();

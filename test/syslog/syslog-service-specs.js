@@ -1,16 +1,18 @@
 import B from 'bluebird';
-import chai from 'chai';
 import SyslogService from '../../lib/syslog';
 import { getServerWithFixtures, fixtures } from '../fixtures';
 import { toUtf8String } from '../../lib/syslog/transformer/syslog-decoder';
-
-
-chai.should();
 
 describe('syslog', function () {
   let server;
   let socket;
   let syslogService;
+  let chai;
+
+  before(async function () {
+    chai = await import('chai');
+    chai.should();
+  });
 
   afterEach(function () {
     syslogService?.close();
