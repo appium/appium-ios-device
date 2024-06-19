@@ -1,16 +1,18 @@
-import chai from 'chai';
 import {InstrumentService, INSTRUMENT_CHANNEL} from '../../lib/instrument';
 import { getServerWithFixtures, fixtures } from '../fixtures';
 import B from 'bluebird';
-
-
-chai.should();
 
 describe('instrument', function () {
   let server;
   let socket;
   let instrumentService;
   const pid = 6385;
+  let chai;
+
+  before(async function () {
+    chai = await import('chai');
+    chai.should();
+  });
 
   afterEach(function () {
     if (instrumentService) {

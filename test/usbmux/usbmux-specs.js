@@ -1,14 +1,16 @@
 import { Usbmux } from '../..';
-import chai from 'chai';
 import { getServerWithFixtures, fixtures, UDID } from '../fixtures';
-
-
-chai.should();
 
 describe('usbmux', function () {
   let usbmux;
   let server;
   let socket;
+  let chai;
+
+  before(async function () {
+    chai = await import('chai');
+    chai.should();
+  });
 
   afterEach(function () {
     try {

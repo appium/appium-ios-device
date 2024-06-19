@@ -1,16 +1,18 @@
-import chai from 'chai';
 import B from 'bluebird';
 import semver from 'semver';
 import WebInspectorService from '../../lib/webinspector';
 import { getServerWithFixtures, fixtures } from '../fixtures';
 
-
-chai.should();
-
 describe('webinspector', function () {
   let server;
   let socket;
   let webInspectorService;
+  let chai;
+
+  before(async function () {
+    chai = await import('chai');
+    chai.should();
+  });
 
   afterEach(function () {
     if (webInspectorService) {

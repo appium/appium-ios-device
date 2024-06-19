@@ -1,15 +1,17 @@
-import chai from 'chai';
 import InstallationServiceProxy from '../../lib/installation-proxy';
 import PlistService from '../../lib/plist-service';
 import { getServerWithFixtures, fixtures } from '../fixtures';
-
-
-chai.should();
 
 describe('installation proxy', function () {
   let server;
   let socket;
   let installationServiceProxy;
+  let chai;
+
+  before(async function () {
+    chai = await import('chai');
+    chai.should();
+  });
 
   afterEach(function () {
     if (installationServiceProxy) {

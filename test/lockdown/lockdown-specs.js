@@ -1,16 +1,18 @@
 import { Lockdown } from '../../lib/lockdown';
 import { PlistService } from '../../lib/plist-service';
 import { getServerWithFixtures, fixtures } from '../fixtures';
-import chai from 'chai';
-import chaiAsPromised from 'chai-as-promised';
-
-
-chai.should();
-chai.use(chaiAsPromised);
 
 describe('lockdown', function () {
   let server;
   let socket;
+  let chai;
+
+  before(async function () {
+    chai = await import('chai');
+    const chaiAsPromised = await import('chai-as-promised');
+    chai.should();
+    chai.use(chaiAsPromised.default);
+  });
 
   afterEach(function () {
     try {
