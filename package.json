@@ -57,7 +57,6 @@
     "singleQuote": true
   },
   "devDependencies": {
-    "@appium/eslint-config-appium": "^8.0.4",
     "@appium/eslint-config-appium-ts": "^0.x",
     "@appium/tsconfig": "^0.x",
     "@appium/types": "^0.x",
