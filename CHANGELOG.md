@@ -1,3 +1,9 @@
+## [2.7.21](https://github.com/appium/appium-ios-device/compare/v2.7.20...v2.7.21) (2024-07-09)
+
+### Miscellaneous Chores
+
+* Remove extra import ([72fd0db](https://github.com/appium/appium-ios-device/commit/72fd0db5b71f13e1cad4095366d0903400c78693))
+
 ## [2.7.20](https://github.com/appium/appium-ios-device/compare/v2.7.19...v2.7.20) (2024-06-19)
 
 ### Miscellaneous Chores
