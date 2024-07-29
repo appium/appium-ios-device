@@ -1,3 +1,9 @@
+## [2.7.22](https://github.com/appium/appium-ios-device/compare/v2.7.21...v2.7.22) (2024-07-29)
+
+### Miscellaneous Chores
+
+* Bump @types/node from 20.14.13 to 22.0.0 ([#183](https://github.com/appium/appium-ios-device/issues/183)) ([312aa61](https://github.com/appium/appium-ios-device/commit/312aa61baafd660d40bce1b52af1b196d5b26ab0))
+
 ## [2.7.21](https://github.com/appium/appium-ios-device/compare/v2.7.20...v2.7.21) (2024-07-09)
 
 ### Miscellaneous Chores
