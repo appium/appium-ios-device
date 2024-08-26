@@ -1,3 +1,9 @@
+## [2.7.23](https://github.com/appium/appium-ios-device/compare/v2.7.22...v2.7.23) (2024-08-26)
+
+### Bug Fixes
+
+* Avoid throwing of runtime exception if DTXMessage cannot be decoded ([#184](https://github.com/appium/appium-ios-device/issues/184)) ([669c10c](https://github.com/appium/appium-ios-device/commit/669c10c43f3ec2fae767acde3c34ddc16f42d789))
+
 ## [2.7.22](https://github.com/appium/appium-ios-device/compare/v2.7.21...v2.7.22) (2024-07-29)
 
 ### Miscellaneous Chores
