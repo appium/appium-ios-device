@@ -1,3 +1,9 @@
+## [2.7.25](https://github.com/appium/appium-ios-device/compare/v2.7.24...v2.7.25) (2024-11-11)
+
+### Bug Fixes
+
+* set __ActivateSuspended to not block xctest run by popup ([#187](https://github.com/appium/appium-ios-device/issues/187)) ([f45d58d](https://github.com/appium/appium-ios-device/commit/f45d58d061f4463135b563be9757afda6854efb3))
+
 ## [2.7.24](https://github.com/appium/appium-ios-device/compare/v2.7.23...v2.7.24) (2024-10-28)
 
 ### Miscellaneous Chores
