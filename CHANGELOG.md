@@ -1,3 +1,9 @@
+## [2.7.26](https://github.com/appium/appium-ios-device/compare/v2.7.25...v2.7.26) (2024-12-03)
+
+### Miscellaneous Chores
+
+* Bump mocha from 10.8.2 to 11.0.1 ([#188](https://github.com/appium/appium-ios-device/issues/188)) ([b890e53](https://github.com/appium/appium-ios-device/commit/b890e5309622c2af787fd4b1896ec440d8e024da))
+
 ## [2.7.25](https://github.com/appium/appium-ios-device/compare/v2.7.24...v2.7.25) (2024-11-11)
 
 ### Bug Fixes
