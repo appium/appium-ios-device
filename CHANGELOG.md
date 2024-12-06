@@ -1,3 +1,9 @@
+## [2.7.27](https://github.com/appium/appium-ios-device/compare/v2.7.26...v2.7.27) (2024-12-06)
+
+### Miscellaneous Chores
+
+* Bump @appium/support from 5.1.8 to 6.0.0 ([#189](https://github.com/appium/appium-ios-device/issues/189)) ([6a6d997](https://github.com/appium/appium-ios-device/commit/6a6d9978f95263623201a232e2a16eb237dec4ac))
+
 ## [2.7.26](https://github.com/appium/appium-ios-device/compare/v2.7.25...v2.7.26) (2024-12-03)
 
 ### Miscellaneous Chores
