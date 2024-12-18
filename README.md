@@ -110,6 +110,10 @@ async function checkAndMountDeveloperImage(udid) {
 }
 ```
 
+### Environment
+
+* If exists, `USBMUXD_SOCKET_ADDRESS` is used to get usbmuxd socket address. Mostly useful in cases where the `usbmuxd` is run by a non-root user.
+
 ## Test
 
 ``` shell
