@@ -1,3 +1,9 @@
+## [2.8.0](https://github.com/appium/appium-ios-device/compare/v2.7.27...v2.8.0) (2024-12-23)
+
+### Features
+
+* get usbmuxd socket address from USBMUXD_SOCKET_ADDRESS environment ([#190](https://github.com/appium/appium-ios-device/issues/190)) ([9a5be45](https://github.com/appium/appium-ios-device/commit/9a5be45bc7d63bbf9177c9117d11906acf06f345))
+
 ## [2.7.27](https://github.com/appium/appium-ios-device/compare/v2.7.26...v2.7.27) (2024-12-06)
 
 ### Miscellaneous Chores
