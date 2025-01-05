@@ -1,3 +1,9 @@
+## [2.8.1](https://github.com/appium/appium-ios-device/compare/v2.8.0...v2.8.1) (2025-01-05)
+
+### Miscellaneous Chores
+
+* Bump @appium/eslint-config-appium-ts from 0.3.3 to 1.0.1 ([#191](https://github.com/appium/appium-ios-device/issues/191)) ([6680e4f](https://github.com/appium/appium-ios-device/commit/6680e4f681221f694b8de200fe83cb8ffc015f88))
+
 ## [2.8.0](https://github.com/appium/appium-ios-device/compare/v2.7.27...v2.8.0) (2024-12-23)
 
 ### Features
