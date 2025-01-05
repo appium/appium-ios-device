@@ -1,5 +1,5 @@
 import B from 'bluebird';
-import SyslogService from '../../lib/syslog';
+import { SyslogService } from '../../lib/syslog';
 import { getServerWithFixtures, fixtures } from '../fixtures';
 import { toUtf8String } from '../../lib/syslog/transformer/syslog-decoder';
 

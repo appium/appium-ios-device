@@ -1,6 +1,6 @@
 import B from 'bluebird';
-import semver from 'semver';
-import WebInspectorService from '../../lib/webinspector';
+import * as semver from 'semver';
+import { WebInspectorService } from '../../lib/webinspector';
 import { getServerWithFixtures, fixtures } from '../fixtures';
 
 describe('webinspector', function () {
