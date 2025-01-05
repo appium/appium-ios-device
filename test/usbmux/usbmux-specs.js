@@ -15,10 +15,10 @@ describe('usbmux', function () {
   afterEach(function () {
     try {
       usbmux.close();
-    } catch (ign) {}
+    } catch {}
     try {
       server.close();
-    } catch (ign) {}
+    } catch {}
   });
 
   it('should read usbmux message', async function () {

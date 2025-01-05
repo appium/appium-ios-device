@@ -1,4 +1,4 @@
-import AfcService from '../../lib/afc';
+import { AfcService } from '../../lib/afc';
 import { getServerWithFixtures, fixtures } from '../fixtures';
 
 describe('afc', function () {

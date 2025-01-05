@@ -17,7 +17,7 @@ describe('lockdown', function () {
   afterEach(function () {
     try {
       server.close();
-    } catch (ign) {}
+    } catch {}
   });
 
   it('should lockdown get value', async function () {
