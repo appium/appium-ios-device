@@ -1,3 +1,9 @@
+## [2.8.2](https://github.com/appium/appium-ios-device/compare/v2.8.1...v2.8.2) (2025-04-03)
+
+### Bug Fixes
+
+* Loop in base-service.js ([#192](https://github.com/appium/appium-ios-device/issues/192)) ([f26ac9f](https://github.com/appium/appium-ios-device/commit/f26ac9f9d5f5c935eef260423f7d9b5747e2f358))
+
 ## [2.8.1](https://github.com/appium/appium-ios-device/compare/v2.8.0...v2.8.1) (2025-01-05)
 
 ### Miscellaneous Chores
