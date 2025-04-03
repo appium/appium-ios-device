@@ -12,13 +12,25 @@ describe('usbmux', function () {
     chai.should();
   });
 
-  afterEach(function () {
-    try {
-      usbmux.close();
-    } catch {}
-    try {
-      server.close();
-    } catch {}
+  afterEach(async function () {
+    if (usbmux) {
+      try {
+        usbmux.close();
+      } catch {}
+      usbmux = null;
+    }
+
+    // Add a small delay to avoid connection reset errors
+    await new Promise((resolve) => setTimeout(resolve, 100));
+
+    if (server) {
+      try {
+        server.close();
+      } catch {}
+      server = null;
+    }
+
+    socket = null;
   });
 
   it('should read usbmux message', async function () {
@@ -36,7 +48,7 @@ describe('usbmux', function () {
     await usbmux.listDevices(-1).should.eventually.be.rejected;
   });
 
-  it.skip('should read concatanated message', async function () {
+  it.skip('should read concatenated message', async function () {
     ({server, socket} = await getServerWithFixtures(fixtures.DEVICE_LIST, fixtures.DEVICE_LIST_2));
     usbmux = new Usbmux(socket);
 
