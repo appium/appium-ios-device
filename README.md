@@ -13,7 +13,7 @@ More information can be found at the links below:
 * [iPhone Wiki](https://www.theiphonewiki.com/)
 
 > **Note**
-> This module is used and tested by [appium-xcuitest-driver](https://github.com/appium/appium-xcuitest-driver), which expects macOS as the host paltform with Xcode.
+> This module is used and tested by [appium-xcuitest-driver](https://github.com/appium/appium-xcuitest-driver), which expects macOS as the host platform with Xcode.
 > Some features may only work partially on other platforms.
 
 ## Usage
