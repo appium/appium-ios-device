@@ -53,11 +53,17 @@ Based on the service name and frame size, determine:
 
 ## Temporary Workarounds
 
-### Option 1: Increase Limits (Not Recommended)
-```javascript
-// Only use this after investigation
-const MAX_FRAME_SIZE = 1024 * 1024 * 1024; // 1GB
+### Option 1: Configure Frame Size via Environment Variable (Recommended)
+```bash
+# Set environment variable to increase frame size limit
+export APPIUM_IOS_MAX_FRAME_SIZE=1073741824  # 1GB in bytes
+
+# Or use human-readable values
+export APPIUM_IOS_MAX_FRAME_SIZE=104857600   # 100MB
+export APPIUM_IOS_MAX_FRAME_SIZE=524288000   # 500MB
 ```
+
+**Note**: This approach is preferred over code changes as it doesn't require recompilation and can be easily adjusted per environment.
 
 ### Option 2: Implement Streaming (Recommended)
 ```javascript
