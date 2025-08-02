@@ -25,8 +25,8 @@ With debug logging enabled, run your Appium tests. The enhanced logging will sho
 ### 3. Analyze the Logs
 Look for these log messages:
 ```
-Large frame detected: 808922930 bytes (771.45 MB)
-Service: WebInspector, Max allowed: 1048576 bytes
+Large frame detected: 771.45 MB
+Service: WebInspector, Max allowed: 1.00 MB
 Memory usage - RSS: 245.67 MB, Heap: 123.45 MB
 ```
 
@@ -94,11 +94,11 @@ When reporting this issue, include:
 ## Example Debug Output
 
 ```
-[debug] Frame size detected: 1048576 bytes, max allowed: 1048576 bytes
-[warn] Large frame detected: 808922930 bytes (771.45 MB)
-[warn] Service: WebInspector, Max allowed: 1048576 bytes
+[debug] Frame size detected: 1.00 MB, max allowed: 1.00 MB
+[warn] Large frame detected: 771.45 MB
+[warn] Service: WebInspector, Max allowed: 1.00 MB
 [warn] Memory usage - RSS: 245.67 MB, Heap: 123.45 MB
-[error] The frame is bigger than expected. Length: 808922930 bytes (771.45 MB), max: 1048576 bytes (1.00 MB)
+[error] The frame is bigger than expected. Length: 771.45 MB, max: 1.00 MB
 [error] Service: WebInspector, Frame offset: 0, Frame length: 4
 [error] To debug this issue, set environment variables:
 [error]   APPIUM_IOS_DEBUG_FRAME_SIZE=true
