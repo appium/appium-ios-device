@@ -75,10 +75,13 @@ const CHUNK_SIZE = 10 * 1024 * 1024; // 10MB chunks
 ```javascript
 // Disable detailed debugging if WebInspector is the issue
 const capabilities = {
-  'appium:webviewDevtoolsPort': -1,
-  'appium:enableWebviewDetailsCollection': false
+  // Disable WebInspector debugging to reduce data transfer
+  'appium:enableWebviewDetailsCollection': false,
+  // Add other debugging-related capabilities as needed
 };
 ```
+
+**Note**: Check your specific Appium driver documentation for available capabilities that can reduce data transfer and debugging overhead.
 
 ## Reporting Issues
 
