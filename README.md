@@ -116,7 +116,7 @@ async function checkAndMountDeveloperImage(udid) {
 
 ## Documentation
 
-* [Debugging Large Frame Size Issues](docs/DEBUG_FRAME_SIZE.md) - Guide for troubleshooting "The frame is bigger than expected" errors
+* [Debugging Large Frame Size Issues](docs/DEBUG_FRAME_SIZE.md) - Comprehensive guide for troubleshooting "The frame is bigger than expected" errors with iOS devices
 
 ## Test
 
