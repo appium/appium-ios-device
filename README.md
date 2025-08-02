@@ -114,7 +114,7 @@ async function checkAndMountDeveloperImage(udid) {
 
 * If exists, `USBMUXD_SOCKET_ADDRESS` is used to get usbmuxd socket address. Mostly useful in cases where the `usbmuxd` is run by a non-root user.
 
-## Documentation
+## Troubleshooting
 
 * [Debugging Large Frame Size Issues](docs/DEBUG_FRAME_SIZE.md) - Comprehensive guide for troubleshooting "The frame is bigger than expected" errors with iOS devices
 
