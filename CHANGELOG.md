@@ -1,3 +1,16 @@
+## [2.9.0](https://github.com/appium/appium-ios-device/compare/v2.8.4...v2.9.0) (2025-08-04)
+
+### Features
+
+* Introduce memory usage debugging for LengthBasedSplitter ([#202](https://github.com/appium/appium-ios-device/issues/202)) ([215e9c4](https://github.com/appium/appium-ios-device/commit/215e9c4be0e153b079b3ab264b361d59ccc2d46c))
+
+### Code Refactoring
+
+* fix typos ([#197](https://github.com/appium/appium-ios-device/issues/197)) ([d1af34a](https://github.com/appium/appium-ios-device/commit/d1af34a0734111af45326774ee1ed46978bea0e8))
+* replace plistlib.parseBuffer with named import parseBuffer ([#200](https://github.com/appium/appium-ios-device/issues/200)) ([d5412a4](https://github.com/appium/appium-ios-device/commit/d5412a4d5b6e999c8df8f3615c52d7dcafa562cb))
+* simplify loop in SyslogDecoder by using for...of ([#199](https://github.com/appium/appium-ios-device/issues/199)) ([b36e841](https://github.com/appium/appium-ios-device/commit/b36e84155399d90adffda30e3c90ecb5c2159fad))
+* use an object spread instead of Object.assign ([#198](https://github.com/appium/appium-ios-device/issues/198)) ([fd6d99b](https://github.com/appium/appium-ios-device/commit/fd6d99b279ae7cdffb1df8a18a4654648ab599eb))
+
 ## [2.8.4](https://github.com/appium/appium-ios-device/compare/v2.8.3...v2.8.4) (2025-06-10)
 
 ### Miscellaneous Chores
