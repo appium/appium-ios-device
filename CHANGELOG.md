@@ -1,3 +1,14 @@
+## [3.0.0](https://github.com/appium/appium-ios-device/compare/v2.9.0...v3.0.0) (2025-08-16)
+
+### ⚠ BREAKING CHANGES
+
+* Required Node.js version has been bumped to ^20.19.0 || ^22.12.0 || >=24.0.0
+* Required npm version has been bumped to >=10
+
+### Features
+
+* Bump Node.js version ([#203](https://github.com/appium/appium-ios-device/issues/203)) ([d426a4d](https://github.com/appium/appium-ios-device/commit/d426a4db6996bec161a7adb81387a1912fe141fc))
+
 ## [2.9.0](https://github.com/appium/appium-ios-device/compare/v2.8.4...v2.9.0) (2025-08-04)
 
 ### Features
