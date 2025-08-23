@@ -1,3 +1,9 @@
+## [3.0.1](https://github.com/appium/appium-ios-device/compare/v3.0.0...v3.0.1) (2025-08-23)
+
+### Miscellaneous Chores
+
+* Bump chai from 5.3.2 to 6.0.0 ([#205](https://github.com/appium/appium-ios-device/issues/205)) ([7f53be9](https://github.com/appium/appium-ios-device/commit/7f53be9c115f6d9d33f84b3445eed1906e51a8c9))
+
 ## [3.0.0](https://github.com/appium/appium-ios-device/compare/v2.9.0...v3.0.0) (2025-08-16)
 
 ### ⚠ BREAKING CHANGES
