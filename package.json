@@ -40,7 +40,7 @@
     "lodash": "^4.17.15",
     "semver": "^7.0.0",
     "source-map-support": "^0.x",
-    "uuid": "^11.0.1"
+    "uuid": "^13.0.0"
   },
   "scripts": {
     "build": "tsc -b",
