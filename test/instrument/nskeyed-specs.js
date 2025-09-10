@@ -1,5 +1,5 @@
 import {unarchive, archive, NSURL, NSUUID, NSDate} from '../../lib/instrument/transformer/nskeyed';
-import {v4} from 'uuid';
+import {util} from '@appium/support';
 
 describe('NSKeyedArchive', function () {
   let chai;
@@ -39,7 +39,7 @@ describe('NSKeyedArchive', function () {
   });
 
   it('NSKeyedArchive encode/decode for NSUUID', function () {
-    const uuid = v4();
+    const uuid = util.uuidV4();
     const data = {'NSUUID': new NSUUID(uuid)};
     const archiveData = archive(data);
     const unArchiveData = unarchive(archiveData);
