@@ -1,3 +1,9 @@
+## [3.1.0](https://github.com/appium/appium-ios-device/compare/v3.0.1...v3.1.0) (2025-09-10)
+
+### Features
+
+* Move uuid-specific helpers to this module ([#208](https://github.com/appium/appium-ios-device/issues/208)) ([9572f1f](https://github.com/appium/appium-ios-device/commit/9572f1f54be6945f7c730c0ce07055fd8d520049))
+
 ## [3.0.1](https://github.com/appium/appium-ios-device/compare/v3.0.0...v3.0.1) (2025-08-23)
 
 ### Miscellaneous Chores
