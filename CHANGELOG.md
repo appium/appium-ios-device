@@ -1,3 +1,9 @@
+## [3.1.1](https://github.com/appium/appium-ios-device/compare/v3.1.0...v3.1.1) (2025-10-17)
+
+### Miscellaneous Chores
+
+* Bump semantic-release from 24.2.9 to 25.0.0 ([#209](https://github.com/appium/appium-ios-device/issues/209)) ([d600447](https://github.com/appium/appium-ios-device/commit/d6004476656f80a3ddcda856d8833bb92029b649))
+
 ## [3.1.0](https://github.com/appium/appium-ios-device/compare/v3.0.1...v3.1.0) (2025-09-10)
 
 ### Features
