@@ -1,3 +1,9 @@
+## [3.1.2](https://github.com/appium/appium-ios-device/compare/v3.1.1...v3.1.2) (2025-10-27)
+
+### Miscellaneous Chores
+
+* Use USBMUXD_SOCKET_ADDRESS environment variable ([#210](https://github.com/appium/appium-ios-device/issues/210)) ([bf6184d](https://github.com/appium/appium-ios-device/commit/bf6184df1c8256bb29c8ab041c9b3e0444601ba3))
+
 ## [3.1.1](https://github.com/appium/appium-ios-device/compare/v3.1.0...v3.1.1) (2025-10-17)
 
 ### Miscellaneous Chores
