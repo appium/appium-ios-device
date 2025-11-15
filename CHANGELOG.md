@@ -1,3 +1,9 @@
+## [3.1.3](https://github.com/appium/appium-ios-device/compare/v3.1.2...v3.1.3) (2025-11-15)
+
+### Miscellaneous Chores
+
+* publish via trusted publisher ([#211](https://github.com/appium/appium-ios-device/issues/211)) ([75a62b8](https://github.com/appium/appium-ios-device/commit/75a62b80d648167a10eb2d3f28240b05131b64fb))
+
 ## [3.1.2](https://github.com/appium/appium-ios-device/compare/v3.1.1...v3.1.2) (2025-10-27)
 
 ### Miscellaneous Chores
