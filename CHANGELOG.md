@@ -1,3 +1,9 @@
+## [3.1.5](https://github.com/appium/appium-ios-device/compare/v3.1.4...v3.1.5) (2025-12-12)
+
+### Miscellaneous Chores
+
+* **deps:** remove `source-map-support` ([#213](https://github.com/appium/appium-ios-device/issues/213)) ([52b7862](https://github.com/appium/appium-ios-device/commit/52b7862b462008f7575c0f7d723f0fa766349038))
+
 ## [3.1.4](https://github.com/appium/appium-ios-device/compare/v3.1.3...v3.1.4) (2025-12-11)
 
 ### Miscellaneous Chores
