@@ -38,8 +38,7 @@
     "bplist-creator": "^0.x",
     "bplist-parser": "^0.x",
     "lodash": "^4.17.15",
-    "semver": "^7.0.0",
-    "source-map-support": "^0.x"
+    "semver": "^7.0.0"
   },
   "scripts": {
     "build": "tsc -b",
