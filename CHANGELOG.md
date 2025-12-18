@@ -1,3 +1,9 @@
+## [3.1.6](https://github.com/appium/appium-ios-device/compare/v3.1.5...v3.1.6) (2025-12-18)
+
+### Miscellaneous Chores
+
+* Bump asyncbox from 3.0.0 to 4.0.1 ([#214](https://github.com/appium/appium-ios-device/issues/214)) ([15efe33](https://github.com/appium/appium-ios-device/commit/15efe33c2f32252aca2f317ca237b55425658427))
+
 ## [3.1.5](https://github.com/appium/appium-ios-device/compare/v3.1.4...v3.1.5) (2025-12-12)
 
 ### Miscellaneous Chores
