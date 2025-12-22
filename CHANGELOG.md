@@ -1,3 +1,9 @@
+## [3.1.7](https://github.com/appium/appium-ios-device/compare/v3.1.6...v3.1.7) (2025-12-22)
+
+### Miscellaneous Chores
+
+* remove unused dev deps ([#215](https://github.com/appium/appium-ios-device/issues/215)) ([6774ffb](https://github.com/appium/appium-ios-device/commit/6774ffbabbc811c4651cf701db9114953d64f380))
+
 ## [3.1.6](https://github.com/appium/appium-ios-device/compare/v3.1.5...v3.1.6) (2025-12-18)
 
 ### Miscellaneous Chores
