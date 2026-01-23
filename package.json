@@ -32,7 +32,7 @@
   ],
   "dependencies": {
     "@appium/support": "^7.0.0-rc.1",
-    "asyncbox": "^4.0.1",
+    "asyncbox": "^6.0.1",
     "axios": "^1.6.7",
     "bluebird": "^3.1.1",
     "bplist-creator": "^0.x",
