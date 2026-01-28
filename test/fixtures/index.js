@@ -1,6 +1,6 @@
-import path from 'path';
+import path from 'node:path';
 import { fs, logger } from '@appium/support';
-import net from 'net';
+import net from 'node:net';
 
 
 const log = logger.getLogger('fixtures');
