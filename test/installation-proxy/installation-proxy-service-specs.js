@@ -1,6 +1,6 @@
 import InstallationServiceProxy from '../../lib/installation-proxy';
-import { PlistService } from '../../lib/plist-service';
-import { getServerWithFixtures, fixtures } from '../fixtures';
+import {PlistService} from '../../lib/plist-service';
+import {getServerWithFixtures, fixtures} from '../fixtures';
 
 describe('installation proxy', function () {
   let server;

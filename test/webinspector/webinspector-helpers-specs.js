@@ -1,4 +1,4 @@
-import { cleanupRpcObject } from '../../lib/webinspector';
+import {cleanupRpcObject} from '../../lib/webinspector';
 
 describe('webinspector helpers', function () {
   let chai;
@@ -17,13 +17,13 @@ describe('webinspector helpers', function () {
         a: null,
         b: 'string',
         c: [1, 2, null],
-      }
+      },
     }).should.eql({
       bar: false,
       obj: {
         b: 'string',
         c: [1, 2],
-      }
+      },
     });
   });
 

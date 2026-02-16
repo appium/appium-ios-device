@@ -28,5 +28,7 @@ jobs:
         run: npm install
       - name: Run linter
         run: npm run lint
+      - run: npm run format:check
+        name: Run Prettier check
       - name: Run unit tests
         run: npm run test

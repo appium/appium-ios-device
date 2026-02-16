@@ -1,7 +1,6 @@
 import path from 'node:path';
-import { fs, logger } from '@appium/support';
+import {fs, logger} from '@appium/support';
 import net from 'node:net';
-
 
 const log = logger.getLogger('fixtures');
 
@@ -31,11 +30,11 @@ const fixtures = {
   INSTRUMENTS_FPS: 'instrumentsFps',
 };
 
-function getFixturePath (file) {
+function getFixturePath(file) {
   return path.resolve(__dirname, file);
 }
 
-async function initFixtures () {
+async function initFixtures() {
   if (fixtureContents) {
     return;
   }
@@ -44,26 +43,46 @@ async function initFixtures () {
     [fixtures.DEVICE_LIST]: await fs.readFile(getFixturePath('usbmuxlistdevicemessage.bin')),
     [fixtures.DEVICE_LIST_2]: await fs.readFile(getFixturePath('usbmuxlistdevicemessage2.bin')),
     [fixtures.DEVICE_CONNECT]: await fs.readFile(getFixturePath('usbmuxconnectmessage.bin')),
-    [fixtures.USBMUX_TO_LOCKDOWN]: await fs.readFile(getFixturePath('usbmuxconnectandlockdown.bin')),
-    [fixtures.LOCKDOWN_GET_VALUE_OS_VERSION]: await fs.readFile(getFixturePath('lockdowngetvaluemessage.bin')),
-    [fixtures.LOCKDOWN_GET_VALUE_TIME]: await fs.readFile(getFixturePath('lockdowngettimemessage.bin')),
-    [fixtures.LOCKDOWN_QUERY_TYPE]: await fs.readFile(getFixturePath('lockdownquerytypemessage.bin')),
+    [fixtures.USBMUX_TO_LOCKDOWN]: await fs.readFile(
+      getFixturePath('usbmuxconnectandlockdown.bin'),
+    ),
+    [fixtures.LOCKDOWN_GET_VALUE_OS_VERSION]: await fs.readFile(
+      getFixturePath('lockdowngetvaluemessage.bin'),
+    ),
+    [fixtures.LOCKDOWN_GET_VALUE_TIME]: await fs.readFile(
+      getFixturePath('lockdowngettimemessage.bin'),
+    ),
+    [fixtures.LOCKDOWN_QUERY_TYPE]: await fs.readFile(
+      getFixturePath('lockdownquerytypemessage.bin'),
+    ),
     [fixtures.SYSLOG_MESSAGES]: await fs.readFile(getFixturePath('syslogmessages.bin')),
-    [fixtures.SYSLOG_SPLIT_MESSAGE_1]: await fs.readFile(getFixturePath('syslogsplitmessages1.bin')),
-    [fixtures.SYSLOG_SPLIT_MESSAGE_2]: await fs.readFile(getFixturePath('syslogsplitmessages2.bin')),
-    [fixtures.WEBINSPECTOR_PARTIAL_MESSAGES]: await fs.readFile(getFixturePath('webinspectorpartialmessages.bin')),
+    [fixtures.SYSLOG_SPLIT_MESSAGE_1]: await fs.readFile(
+      getFixturePath('syslogsplitmessages1.bin'),
+    ),
+    [fixtures.SYSLOG_SPLIT_MESSAGE_2]: await fs.readFile(
+      getFixturePath('syslogsplitmessages2.bin'),
+    ),
+    [fixtures.WEBINSPECTOR_PARTIAL_MESSAGES]: await fs.readFile(
+      getFixturePath('webinspectorpartialmessages.bin'),
+    ),
     [fixtures.WEBINSPECTOR_MESSAGES]: await fs.readFile(getFixturePath('webinspectormessages.bin')),
-    [fixtures.INSTALLATION_PROXY_LIST_MESSAGE]: await fs.readFile(getFixturePath('installationproxylistmessage.bin')),
-    [fixtures.INSTALLATION_PROXY_INSTALL_MESSAGE]: await fs.readFile(getFixturePath('installationproxyinstallmessage.bin')),
+    [fixtures.INSTALLATION_PROXY_LIST_MESSAGE]: await fs.readFile(
+      getFixturePath('installationproxylistmessage.bin'),
+    ),
+    [fixtures.INSTALLATION_PROXY_INSTALL_MESSAGE]: await fs.readFile(
+      getFixturePath('installationproxyinstallmessage.bin'),
+    ),
     [fixtures.AFC_SUCCESS_RESPONSE]: await fs.readFile(getFixturePath('afcsuccessresponse.bin')),
     [fixtures.AFC_LIST_DIR_RESPONSE]: await fs.readFile(getFixturePath('afclistdirresponse.bin')),
     [fixtures.AFC_FILE_INFO_RESPONSE]: await fs.readFile(getFixturePath('afcfileinforesponse.bin')),
-    [fixtures.INSTRUMENTS_LAUNCH_APP]: await fs.readFile(getFixturePath('instrumentslaunchapp.bin')),
-    [fixtures.INSTRUMENTS_FPS]: await fs.readFile(getFixturePath('instrumentsfps.bin'))
+    [fixtures.INSTRUMENTS_LAUNCH_APP]: await fs.readFile(
+      getFixturePath('instrumentslaunchapp.bin'),
+    ),
+    [fixtures.INSTRUMENTS_FPS]: await fs.readFile(getFixturePath('instrumentsfps.bin')),
   };
 }
 
-async function getServerWithFixtures (...args) {
+async function getServerWithFixtures(...args) {
   await initFixtures();
 
   const fixturesToUse = args.map((key) => fixtureContents[key]);
@@ -86,5 +105,4 @@ async function getServerWithFixtures (...args) {
   };
 }
 
-
-export { getServerWithFixtures, fixtures, UDID };
+export {getServerWithFixtures, fixtures, UDID};

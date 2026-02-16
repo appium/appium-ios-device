@@ -21,7 +21,7 @@ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
 OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-import { validate} from './validate';
+import {validate} from './validate';
 import _ from 'lodash';
 
 /**

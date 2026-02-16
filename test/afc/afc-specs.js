@@ -1,5 +1,5 @@
-import { AfcService } from '../../lib/afc';
-import { getServerWithFixtures, fixtures } from '../fixtures';
+import {AfcService} from '../../lib/afc';
+import {getServerWithFixtures, fixtures} from '../fixtures';
 
 describe('afc', function () {
   let server;

@@ -21,7 +21,7 @@ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
 OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-import { validate } from './validate';
+import {validate} from './validate';
 
 export function parse(uuid: string): Uint8Array {
   if (!validate(uuid)) {
@@ -54,6 +54,6 @@ export function parse(uuid: string): Uint8Array {
     (v >>> 24) & 0xff,
     (v >>> 16) & 0xff,
     (v >>> 8) & 0xff,
-    v & 0xff
+    v & 0xff,
   );
 }

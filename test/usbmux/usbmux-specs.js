@@ -1,5 +1,5 @@
-import { Usbmux } from '../..';
-import { getServerWithFixtures, fixtures, UDID } from '../fixtures';
+import {Usbmux} from '../..';
+import {getServerWithFixtures, fixtures, UDID} from '../fixtures';
 
 describe('usbmux', function () {
   let usbmux;
@@ -77,7 +77,10 @@ describe('usbmux', function () {
   });
 
   it('should switch decoders correctly', async function () {
-    ({server, socket} = await getServerWithFixtures(fixtures.DEVICE_LIST, fixtures.USBMUX_TO_LOCKDOWN));
+    ({server, socket} = await getServerWithFixtures(
+      fixtures.DEVICE_LIST,
+      fixtures.USBMUX_TO_LOCKDOWN,
+    ));
     usbmux = new Usbmux(socket);
 
     const lockdown = await usbmux.connectLockdown(UDID);

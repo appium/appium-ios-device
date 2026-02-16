@@ -1,6 +1,5 @@
-import { utilities } from '..';
-import { getServerWithFixtures, fixtures, UDID } from './fixtures';
-
+import {utilities} from '..';
+import {getServerWithFixtures, fixtures, UDID} from './fixtures';
 
 describe('utilities', function () {
   let server;
@@ -26,7 +25,11 @@ describe('utilities', function () {
   });
 
   it('should get product version', async function () {
-    ({server, socket} = await getServerWithFixtures(fixtures.DEVICE_LIST, fixtures.DEVICE_CONNECT, fixtures.LOCKDOWN_GET_VALUE_OS_VERSION));
+    ({server, socket} = await getServerWithFixtures(
+      fixtures.DEVICE_LIST,
+      fixtures.DEVICE_CONNECT,
+      fixtures.LOCKDOWN_GET_VALUE_OS_VERSION,
+    ));
     const osVersion = await utilities.getOSVersion(UDID, socket);
     osVersion.should.be.equal('12.3.1');
   });
