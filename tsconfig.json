@@ -7,6 +7,12 @@
     "types": ["node"],
     "checkJs": true
   },
+  "ts-node": {
+    "transpileOnly": true,
+    "compilerOptions": {
+      "rootDir": "."
+    }
+  },
   "include": [
     "index.js",
     "lib"
