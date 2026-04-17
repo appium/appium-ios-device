@@ -1,3 +1,9 @@
+## [3.1.11](https://github.com/appium/appium-ios-device/compare/v3.1.10...v3.1.11) (2026-04-17)
+
+### Miscellaneous Chores
+
+* Bump typescript from 5.9.3 to 6.0.3 ([#222](https://github.com/appium/appium-ios-device/issues/222)) ([188b017](https://github.com/appium/appium-ios-device/commit/188b01779792f7271654a4093bf39a52a455afaa))
+
 ## [3.1.10](https://github.com/appium/appium-ios-device/compare/v3.1.9...v3.1.10) (2026-02-16)
 
 ### Bug Fixes
