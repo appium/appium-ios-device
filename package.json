@@ -31,9 +31,9 @@
     "CHANGELOG.md"
   ],
   "dependencies": {
-    "@appium/support": "^7.0.0-rc.1",
+    "@appium/support": "^7.2.2",
     "asyncbox": "^6.0.1",
-    "axios": "^1.6.7",
+    "axios": "^1.16.0",
     "bluebird": "^3.1.1",
     "bplist-creator": "^0.x",
     "bplist-parser": "^0.x",

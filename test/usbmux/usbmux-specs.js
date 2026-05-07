@@ -1,5 +1,7 @@
 import {Usbmux} from '../..';
 import {getServerWithFixtures, fixtures, UDID} from '../fixtures';
+import {plist} from '@appium/support';
+import {PassThrough} from 'node:stream';
 
 describe('usbmux', function () {
   let usbmux;
@@ -85,5 +87,37 @@ describe('usbmux', function () {
 
     const lockdown = await usbmux.connectLockdown(UDID);
     await lockdown.getValue({Key: 'TimeIntervalSince1970'});
+  });
+
+  it('should parse pair record data returned by @appium/support', async function () {
+    usbmux = new Usbmux(new PassThrough());
+    const pairRecord = {HostID: 'host-id', SystemBUID: 'system-buid'};
+    const pairRecordDataBase64 = plist.createBinaryPlist(pairRecord).toString('base64');
+    const parsedBySupport = plist.parsePlist(
+      `<?xml version="1.0" encoding="UTF-8"?>
+      <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+      <plist version="1.0">
+        <dict>
+          <key>PairRecordData</key>
+          <data>${pairRecordDataBase64}</data>
+        </dict>
+      </plist>`,
+    );
+    const pairRecordData = parsedBySupport.PairRecordData;
+    usbmux._receivePlistPromise = (_, responseCallback) => ({
+      tag: 0,
+      receivePromise: (async () => {
+        const data = {
+          payload: {
+            PairRecordData: pairRecordData,
+          },
+        };
+        return responseCallback(data);
+      })(),
+    });
+    usbmux._sendPlist = () => {};
+
+    const result = await usbmux.readPairRecord(UDID);
+    result.should.deep.equal(pairRecord);
   });
 });
