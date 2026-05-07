@@ -1,3 +1,9 @@
+## [3.1.12](https://github.com/appium/appium-ios-device/compare/v3.1.11...v3.1.12) (2026-05-07)
+
+### Bug Fixes
+
+* Bump `@appium/support` to fix plist parsing ([#223](https://github.com/appium/appium-ios-device/issues/223)) ([a794996](https://github.com/appium/appium-ios-device/commit/a794996af841761695b607361070917e8671a76e))
+
 ## [3.1.11](https://github.com/appium/appium-ios-device/compare/v3.1.10...v3.1.11) (2026-04-17)
 
 ### Miscellaneous Chores
