@@ -1,3 +1,9 @@
+## [3.1.13](https://github.com/appium/appium-ios-device/compare/v3.1.12...v3.1.13) (2026-05-08)
+
+### Bug Fixes
+
+* linter warnings ([#224](https://github.com/appium/appium-ios-device/issues/224)) ([635b8af](https://github.com/appium/appium-ios-device/commit/635b8affa0ca758314acba996273295b77f6e36e))
+
 ## [3.1.12](https://github.com/appium/appium-ios-device/compare/v3.1.11...v3.1.12) (2026-05-07)
 
 ### Bug Fixes
