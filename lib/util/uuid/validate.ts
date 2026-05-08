@@ -24,6 +24,11 @@ OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 const REGEX =
   /^(?:[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$/i;
 
+/**
+ * Checks whether a value is a supported UUID string.
+ * @param {unknown} uuid
+ * @returns {boolean}
+ */
 export function validate(uuid: unknown): boolean {
   return typeof uuid === 'string' && REGEX.test(uuid);
 }
