@@ -104,4 +104,3 @@ async function initFixtures() {
     [fixtures.INSTRUMENTS_FPS]: await fs.readFile(getFixturePath('instrumentsfps.bin')),
   };
 }
-
