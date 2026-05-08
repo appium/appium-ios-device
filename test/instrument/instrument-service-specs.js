@@ -1,6 +1,5 @@
 import {InstrumentService, INSTRUMENT_CHANNEL} from '../../lib/instrument';
 import {getServerWithFixtures, fixtures} from '../fixtures';
-import B from 'bluebird';
 
 describe('instrument', function () {
   let server;
@@ -63,7 +62,7 @@ describe('instrument', function () {
       'startSamplingAtTimeInterval:',
       0,
     );
-    await new B((resolve) => {
+    await new Promise((resolve) => {
       setTimeout(() => {
         resolve(data);
       }, 2000);

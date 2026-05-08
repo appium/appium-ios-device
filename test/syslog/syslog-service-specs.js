@@ -1,4 +1,3 @@
-import B from 'bluebird';
 import {SyslogService} from '../../lib/syslog';
 import {getServerWithFixtures, fixtures} from '../fixtures';
 import {toUtf8String} from '../../lib/syslog/transformer/syslog-decoder';
@@ -22,7 +21,7 @@ describe('syslog', function () {
   it('should wait for first syslog message', async function () {
     ({server, socket} = await getServerWithFixtures(fixtures.SYSLOG_MESSAGES));
     syslogService = new SyslogService(socket);
-    await new B((resolve) => {
+    await new Promise((resolve) => {
       let count = 0;
       syslogService.start((line) => {
         // Send fake data to get more from the server
@@ -40,7 +39,7 @@ describe('syslog', function () {
       fixtures.SYSLOG_SPLIT_MESSAGE_2,
     ));
     syslogService = new SyslogService(socket);
-    await new B((resolve) => {
+    await new Promise((resolve) => {
       let count = 0;
       syslogService.start((line) => {
         // Send fake data to get more from the server
