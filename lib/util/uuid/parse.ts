@@ -23,6 +23,11 @@ OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import {validate} from './validate';
 
+/**
+ * Parses a UUID string into its 16-byte representation.
+ * @param {string} uuid
+ * @returns {Uint8Array}
+ */
 export function parse(uuid: string): Uint8Array {
   if (!validate(uuid)) {
     throw TypeError('Invalid UUID');

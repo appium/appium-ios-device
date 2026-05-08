@@ -30,6 +30,27 @@ import _ from 'lodash';
  */
 const byteToHex: string[] = _.range(256).map((i) => (i + 0x100).toString(16).slice(1));
 
+/**
+ * Converts a 16-byte UUID array into canonical string form.
+ * @param {Uint8Array} arr
+ * @param {number} [offset=0]
+ * @returns {string}
+ */
+export function stringify(arr: Uint8Array, offset: number = 0): string {
+  const uuid = unsafeStringify(arr, offset);
+
+  // Consistency check for valid UUID.  If this throws, it's likely due to one
+  // of the following:
+  // - One or more input array values don't map to a hex octet (leading to
+  // "undefined" in the uuid)
+  // - Invalid input values for the RFC `version` or `variant` fields
+  if (!validate(uuid)) {
+    throw TypeError('Stringified UUID is invalid');
+  }
+
+  return uuid;
+}
+
 function unsafeStringify(arr: Uint8Array, offset: number = 0): string {
   return (
     byteToHex[arr[offset + 0]] +
@@ -53,19 +74,4 @@ function unsafeStringify(arr: Uint8Array, offset: number = 0): string {
     byteToHex[arr[offset + 14]] +
     byteToHex[arr[offset + 15]]
   ).toLowerCase();
-}
-
-export function stringify(arr: Uint8Array, offset: number = 0): string {
-  const uuid = unsafeStringify(arr, offset);
-
-  // Consistency check for valid UUID.  If this throws, it's likely due to one
-  // of the following:
-  // - One or more input array values don't map to a hex octet (leading to
-  // "undefined" in the uuid)
-  // - Invalid input values for the RFC `version` or `variant` fields
-  if (!validate(uuid)) {
-    throw TypeError('Stringified UUID is invalid');
-  }
-
-  return uuid;
 }

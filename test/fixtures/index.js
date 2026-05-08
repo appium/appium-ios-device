@@ -4,11 +4,11 @@ import net from 'node:net';
 
 const log = logger.getLogger('fixtures');
 
-const UDID = '63c3d055c4f83e960e5980fa68be0fbf7d4ba74c';
+export const UDID = '63c3d055c4f83e960e5980fa68be0fbf7d4ba74c';
 
 let fixtureContents;
 
-const fixtures = {
+export const fixtures = {
   DEVICE_LIST: 'deviceList',
   DEVICE_LIST_2: 'deviceList2',
   DEVICE_CONNECT: 'deviceConnect',
@@ -29,6 +29,29 @@ const fixtures = {
   INSTRUMENTS_LAUNCH_APP: 'instrumentsLaunchApp',
   INSTRUMENTS_FPS: 'instrumentsFps',
 };
+
+export async function getServerWithFixtures(...args) {
+  await initFixtures();
+
+  const fixturesToUse = args.map((key) => fixtureContents[key]);
+
+  const server = net.createServer();
+  server.listen();
+  const socket = net.connect(server.address());
+  server.on('connection', function (socket) {
+    let i = 0;
+    socket.on('data', function () {
+      if (i < fixturesToUse.length) {
+        log.debug(`Writing to socket. Message #${i}`);
+        socket.write(fixturesToUse[i++]);
+      }
+    });
+  });
+  return {
+    server,
+    socket,
+  };
+}
 
 function getFixturePath(file) {
   return path.resolve(__dirname, file);
@@ -81,28 +104,3 @@ async function initFixtures() {
     [fixtures.INSTRUMENTS_FPS]: await fs.readFile(getFixturePath('instrumentsfps.bin')),
   };
 }
-
-async function getServerWithFixtures(...args) {
-  await initFixtures();
-
-  const fixturesToUse = args.map((key) => fixtureContents[key]);
-
-  const server = net.createServer();
-  server.listen();
-  const socket = net.connect(server.address());
-  server.on('connection', function (socket) {
-    let i = 0;
-    socket.on('data', function () {
-      if (i < fixturesToUse.length) {
-        log.debug(`Writing to socket. Message #${i}`);
-        socket.write(fixturesToUse[i++]);
-      }
-    });
-  });
-  return {
-    server,
-    socket,
-  };
-}
-
-export {getServerWithFixtures, fixtures, UDID};
