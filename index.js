@@ -1,9 +1,7 @@
-import { default as Usbmux } from './lib/usbmux';
-import * as utilities from './lib/utilities';
-import * as services from './lib/services';
-
-export { Usbmux, utilities, services };
+export {default as Usbmux} from './lib/usbmux';
+export * as utilities from './lib/utilities';
+export * as services from './lib/services';
 export { INSTRUMENT_CHANNEL } from './lib/instrument';
 export { TESTMANAGERD_CHANNEL } from './lib/testmanagerd';
 export { Xctest } from './lib/xctest';
-export default Usbmux;
+export {default} from './lib/usbmux';
