@@ -1,4 +1,3 @@
-import B from 'bluebird';
 import * as semver from 'semver';
 import {WebInspectorService} from '../../lib/webinspector';
 import {getServerWithFixtures, fixtures} from '../fixtures';
@@ -39,7 +38,7 @@ describe('webinspector', function () {
       __selector: '_rpc_reportIdentifier:',
     };
     webInspectorService.sendMessage(obj);
-    await new B((resolve) => {
+    await new Promise((resolve) => {
       webInspectorService.listenMessage(resolve);
     });
   });
@@ -59,7 +58,7 @@ describe('webinspector', function () {
       __selector: '_rpc_reportIdentifier:',
     };
     webInspectorService.sendMessage(obj);
-    await new B((resolve) => {
+    await new Promise((resolve) => {
       webInspectorService.listenMessage(resolve);
     });
   });
