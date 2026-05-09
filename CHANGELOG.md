@@ -1,3 +1,9 @@
+## [3.1.14](https://github.com/appium/appium-ios-device/compare/v3.1.13...v3.1.14) (2026-05-09)
+
+### Miscellaneous Chores
+
+* Ditch bluebird ([#225](https://github.com/appium/appium-ios-device/issues/225)) ([e6fc649](https://github.com/appium/appium-ios-device/commit/e6fc6492f367488ea3597ffffacdbd0afe0ff40c))
+
 ## [3.1.13](https://github.com/appium/appium-ios-device/compare/v3.1.12...v3.1.13) (2026-05-08)
 
 ### Bug Fixes
