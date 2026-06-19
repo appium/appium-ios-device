@@ -63,7 +63,7 @@
     "@semantic-release/git": "^10.0.1",
     "@types/lodash": "^4.14.196",
     "@types/mocha": "^10.0.1",
-    "@types/node": "^25.0.0",
+    "@types/node": "^26.0.0",
     "chai": "^6.0.0",
     "chai-as-promised": "^8.0.0",
     "conventional-changelog-conventionalcommits": "^9.0.0",
