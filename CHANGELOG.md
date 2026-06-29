@@ -1,3 +1,5 @@
+## [3.1.16](https://github.com/appium/appium-ios-device/compare/v3.1.15...v3.1.16) (2026-06-29)
+
 ## [3.1.15](https://github.com/appium/appium-ios-device/compare/v3.1.14...v3.1.15) (2026-06-19)
 
 ### Miscellaneous Chores
