@@ -1,3 +1,9 @@
+## [3.1.17](https://github.com/appium/appium-ios-device/compare/v3.1.16...v3.1.17) (2026-07-01)
+
+### Miscellaneous Chores
+
+* downgrade conventional-changelog-conventionalcommits to v9 ([#230](https://github.com/appium/appium-ios-device/issues/230)) ([5b0410f](https://github.com/appium/appium-ios-device/commit/5b0410fa6ed31d2c06fb0647bb6e44f80cda2ae8))
+
 ## [3.1.16](https://github.com/appium/appium-ios-device/compare/v3.1.15...v3.1.16) (2026-06-29)
 
 ## [3.1.15](https://github.com/appium/appium-ios-device/compare/v3.1.14...v3.1.15) (2026-06-19)
