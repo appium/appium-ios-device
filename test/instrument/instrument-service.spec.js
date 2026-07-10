@@ -31,7 +31,7 @@ describe('instrument', function () {
       [],
       {StartSuspendedKey: 0, KillExisting: 1},
     );
-    data.selector.should.be.equal(pid);
+    expect(data.selector).to.equal(pid);
   });
 
   it('should ios device kill app ', async function () {

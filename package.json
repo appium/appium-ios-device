@@ -48,7 +48,7 @@
     "format": "prettier -w ./lib ./test",
     "format:check": "prettier --check ./lib ./test",
     "prepare": "npm run build",
-    "test": "node --enable-source-maps --test-force-exit --test-timeout=60000 \"./build/test/**/*.spec.js\""
+    "test": "node --test --enable-source-maps --test-force-exit --test-timeout=60000 \"./build/test/**/*.spec.js\""
   },
   "prettier": {
     "bracketSpacing": false,
