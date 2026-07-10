@@ -1,17 +1,13 @@
 import {InstrumentService, INSTRUMENT_CHANNEL} from '../../lib/instrument';
 import {getServerWithFixtures, fixtures} from '../fixtures';
+import {describe, it, afterEach} from 'node:test';
+import {expect} from 'chai';
 
 describe('instrument', function () {
   let server;
   let socket;
   let instrumentService;
   const pid = 6385;
-  let chai;
-
-  before(async function () {
-    chai = await import('chai');
-    chai.should();
-  });
 
   afterEach(function () {
     if (instrumentService) {
@@ -67,6 +63,6 @@ describe('instrument', function () {
         resolve(data);
       }, 2000);
     });
-    data.should.to.deep.equal([0, 51, 59, 60]);
+    expect(data).to.deep.equal([0, 51, 59, 60]);
   });
 });

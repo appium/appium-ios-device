@@ -1,16 +1,12 @@
 import {AfcService} from '../../lib/afc';
 import {getServerWithFixtures, fixtures} from '../fixtures';
+import {describe, it, afterEach} from 'node:test';
+import {expect} from 'chai';
 
 describe('afc', function () {
   let server;
   let socket;
   let service;
-  let chai;
-
-  before(async function () {
-    chai = await import('chai');
-    chai.should();
-  });
 
   afterEach(function () {
     service.close();
@@ -35,19 +31,19 @@ describe('afc', function () {
     ({server, socket} = await getServerWithFixtures(fixtures.AFC_LIST_DIR_RESPONSE));
     service = new AfcService(socket);
     const items = await service.listDirectory('/');
-    items.should.contain('Photos');
+    expect(items).to.contain('Photos');
   });
 
   it('should get file info', async function () {
     ({server, socket} = await getServerWithFixtures(fixtures.AFC_FILE_INFO_RESPONSE));
     service = new AfcService(socket);
     const info = await service.getFileInfo('Photos');
-    info.birthtimeMs.should.be.equal(1494244521000);
-    info.blocks.should.be.equal(0);
-    info.mtimeMs.should.be.equal(1494244521000);
-    info.nlink.should.be.equal(2);
-    info.size.should.be.equal(64);
-    info.isDirectory().should.be.equal(true);
-    info.isFile().should.be.equal(false);
+    expect(info.birthtimeMs).to.be.equal(1494244521000);
+    expect(info.blocks).to.be.equal(0);
+    expect(info.mtimeMs).to.be.equal(1494244521000);
+    expect(info.nlink).to.be.equal(2);
+    expect(info.size).to.be.equal(64);
+    expect(info.isDirectory()).to.be.equal(true);
+    expect(info.isFile()).to.be.equal(false);
   });
 });

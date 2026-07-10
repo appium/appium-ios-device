@@ -1,17 +1,12 @@
 import * as semver from 'semver';
 import {WebInspectorService} from '../../lib/webinspector';
 import {getServerWithFixtures, fixtures} from '../fixtures';
+import {describe, it, afterEach} from 'node:test';
 
 describe('webinspector', function () {
   let server;
   let socket;
   let webInspectorService;
-  let chai;
-
-  before(async function () {
-    chai = await import('chai');
-    chai.should();
-  });
 
   afterEach(function () {
     if (webInspectorService) {

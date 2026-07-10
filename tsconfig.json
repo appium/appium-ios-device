@@ -3,18 +3,14 @@
   "extends": "@appium/tsconfig/tsconfig.json",
   "compilerOptions": {
     "strict": false,  // TODO: make this flag true
+    "rootDir": ".",
     "outDir": "build",
     "types": ["node"],
     "checkJs": true
   },
-  "ts-node": {
-    "transpileOnly": true,
-    "compilerOptions": {
-      "rootDir": "."
-    }
-  },
   "include": [
     "index.js",
-    "lib"
+    "lib",
+    "test"
   ]
 }

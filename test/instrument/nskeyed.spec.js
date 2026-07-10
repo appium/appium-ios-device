@@ -1,14 +1,9 @@
 import {unarchive, archive, NSURL, NSUUID, NSDate} from '../../lib/instrument/transformer/nskeyed';
 import {util} from '@appium/support';
+import {describe, it} from 'node:test';
+import {expect} from 'chai';
 
 describe('NSKeyedArchive', function () {
-  let chai;
-
-  before(async function () {
-    chai = await import('chai');
-    chai.should();
-  });
-
   it('should parses JavaScript objects into iOS NSKeyedArchive data', function () {
     const data = {
       ur: 1000,
@@ -73,7 +68,7 @@ describe('NSKeyedArchive', function () {
     };
     const archiveData = archive(data);
     const unArchiveData = unarchive(archiveData);
-    unArchiveData.should.to.deep.equal(data);
+    expect(unArchiveData).to.deep.equal(data);
   });
 
   it('NSKeyedArchive encode/decode for NSURL', function () {
@@ -81,7 +76,7 @@ describe('NSKeyedArchive', function () {
     const data = {NSURL: new NSURL(null, file)};
     const archiveData = archive(data);
     const unArchiveData = unarchive(archiveData);
-    unArchiveData.NSURL.relative.should.be.equal(file);
+    expect(unArchiveData.NSURL.relative).to.be.equal(file);
   });
 
   it('NSKeyedArchive encode/decode for NSUUID', function () {
@@ -89,14 +84,14 @@ describe('NSKeyedArchive', function () {
     const data = {NSUUID: new NSUUID(uuid)};
     const archiveData = archive(data);
     const unArchiveData = unarchive(archiveData);
-    unArchiveData.NSUUID.should.be.equal(uuid);
+    expect(unArchiveData.NSUUID).to.be.equal(uuid);
   });
 
   it('NSKeyedArchive encode/decode for NSDate', function () {
-    const date = parseInt(Date.now() / 1000, 10);
+    const date = parseInt(String(Date.now() / 1000), 10);
     const data = {NSDate: new NSDate(date)};
     const archiveData = archive(data);
     const unArchiveData = unarchive(archiveData);
-    unArchiveData.NSDate.should.be.equal(date);
+    expect(unArchiveData.NSDate).to.be.equal(date);
   });
 });

@@ -2,17 +2,16 @@ import {Usbmux} from '../..';
 import {getServerWithFixtures, fixtures, UDID} from '../fixtures';
 import {plist} from '@appium/support';
 import {PassThrough} from 'node:stream';
+import {describe, it, afterEach} from 'node:test';
+import {expect, use} from 'chai';
+import chaiAsPromised from 'chai-as-promised';
+
+use(chaiAsPromised);
 
 describe('usbmux', function () {
   let usbmux;
   let server;
   let socket;
-  let chai;
-
-  before(async function () {
-    chai = await import('chai');
-    chai.should();
-  });
 
   afterEach(async function () {
     if (usbmux) {
@@ -40,14 +39,14 @@ describe('usbmux', function () {
     usbmux = new Usbmux(socket);
 
     let devices = await usbmux.listDevices();
-    devices.length.should.be.equal(1);
+    expect(devices.length).to.be.equal(1);
   });
 
   it('should fail due to timeout', async function () {
     ({server, socket} = await getServerWithFixtures());
     usbmux = new Usbmux(socket);
 
-    await usbmux.listDevices(-1).should.eventually.be.rejected;
+    await expect(usbmux.listDevices(-1)).to.eventually.be.rejectedWith();
   });
 
   it.skip('should read concatenated message', async function () {
@@ -55,12 +54,12 @@ describe('usbmux', function () {
     usbmux = new Usbmux(socket);
 
     let devices = await usbmux.listDevices();
-    devices.length.should.be.equal(1);
-    devices[0].DeviceID.should.be.equal(1);
+    expect(devices.length).to.be.equal(1);
+    expect(devices[0].DeviceID).to.be.equal(1);
 
     devices = await usbmux.listDevices();
-    devices.length.should.be.equal(1);
-    devices[0].DeviceID.should.be.equal(2);
+    expect(devices.length).to.be.equal(1);
+    expect(devices[0].DeviceID).to.be.equal(2);
   });
 
   it('should find correct device', async function () {
@@ -68,7 +67,7 @@ describe('usbmux', function () {
     usbmux = new Usbmux(socket);
 
     let device = await usbmux.findDevice(UDID);
-    device.Properties.SerialNumber.should.be.equal(UDID);
+    expect(device.Properties.SerialNumber).to.be.equal(UDID);
   });
 
   it('should connect to correct device', async function () {
@@ -103,7 +102,7 @@ describe('usbmux', function () {
         </dict>
       </plist>`,
     );
-    const pairRecordData = parsedBySupport.PairRecordData;
+    const pairRecordData = /** @type {{PairRecordData: string}} */ (parsedBySupport).PairRecordData;
     usbmux._receivePlistPromise = (_, responseCallback) => ({
       tag: 0,
       receivePromise: (async () => {
@@ -118,6 +117,6 @@ describe('usbmux', function () {
     usbmux._sendPlist = () => {};
 
     const result = await usbmux.readPairRecord(UDID);
-    result.should.deep.equal(pairRecord);
+    expect(result).to.deep.equal(pairRecord);
   });
 });
