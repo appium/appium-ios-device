@@ -83,7 +83,6 @@ As an example, assuming we are using a repo from `https://github/example/iOSDevi
 
 ```js
 import { services, utilities } from 'appium-ios-device';
-import _ from 'lodash';
 const { startImageMounterService } = services;
 ...
 async function checkAndMountDeveloperImage(udid) {

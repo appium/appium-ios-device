@@ -22,13 +22,12 @@ OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
 import {validate} from './validate';
-import _ from 'lodash';
 
 /**
  * Convert array of 16 byte values to UUID string format of the form:
  * XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
  */
-const byteToHex: string[] = _.range(256).map((i) => (i + 0x100).toString(16).slice(1));
+const byteToHex: string[] = Array.from({length: 256}, (_, i) => (i + 0x100).toString(16).slice(1));
 
 /**
  * Converts a 16-byte UUID array into canonical string form.
