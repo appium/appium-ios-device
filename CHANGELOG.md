@@ -1,3 +1,9 @@
+## [3.1.19](https://github.com/appium/appium-ios-device/compare/v3.1.18...v3.1.19) (2026-07-21)
+
+### Miscellaneous Chores
+
+* Drop lodash ([#235](https://github.com/appium/appium-ios-device/issues/235)) ([add2864](https://github.com/appium/appium-ios-device/commit/add2864ab2f99a0555a3cfc2127f4e69f324850d))
+
 ## [3.1.18](https://github.com/appium/appium-ios-device/compare/v3.1.17...v3.1.18) (2026-07-11)
 
 ### Miscellaneous Chores
