@@ -96,7 +96,7 @@ async function checkAndMountDeveloperImage(udid) {
         subFolderList: ['DeviceSupportFiles', 'iOS']
       }
       const downloadedImagePath = await fetchImageFromGithubRepo(udid, repoOpts);
-      if (!_.isEmpty(downloadedImagePath)) {
+      if (downloadedImagePath) {
         const {developerImage, developerImageSignature} = downloadedImagePath;
         await imageMountService.mount(developerImage, developerImageSignature);
       }
