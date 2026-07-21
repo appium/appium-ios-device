@@ -83,7 +83,6 @@ As an example, assuming we are using a repo from `https://github/example/iOSDevi
 
 ```js
 import { services, utilities } from 'appium-ios-device';
-import _ from 'lodash';
 const { startImageMounterService } = services;
 ...
 async function checkAndMountDeveloperImage(udid) {
@@ -97,7 +96,7 @@ async function checkAndMountDeveloperImage(udid) {
         subFolderList: ['DeviceSupportFiles', 'iOS']
       }
       const downloadedImagePath = await fetchImageFromGithubRepo(udid, repoOpts);
-      if (!_.isEmpty(downloadedImagePath)) {
+      if (downloadedImagePath) {
         const {developerImage, developerImageSignature} = downloadedImagePath;
         await imageMountService.mount(developerImage, developerImageSignature);
       }
