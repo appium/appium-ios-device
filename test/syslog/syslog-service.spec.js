@@ -1,8 +1,10 @@
-import {SyslogService} from '../../lib/syslog';
-import {getServerWithFixtures, fixtures} from '../fixtures';
-import {toUtf8String} from '../../lib/syslog/transformer/syslog-decoder';
 import {describe, it, afterEach} from 'node:test';
+
 import {expect} from 'chai';
+
+import {SyslogService} from '../../lib/syslog';
+import {toUtf8String} from '../../lib/syslog/transformer/syslog-decoder';
+import {getServerWithFixtures, fixtures} from '../fixtures';
 
 describe('syslog', function () {
   let server;
@@ -30,10 +32,7 @@ describe('syslog', function () {
   });
 
   it('should wait for syslog split messages', async function () {
-    ({server, socket} = await getServerWithFixtures(
-      fixtures.SYSLOG_SPLIT_MESSAGE_1,
-      fixtures.SYSLOG_SPLIT_MESSAGE_2,
-    ));
+    ({server, socket} = await getServerWithFixtures(fixtures.SYSLOG_SPLIT_MESSAGE_1, fixtures.SYSLOG_SPLIT_MESSAGE_2));
     syslogService = new SyslogService(socket);
     await new Promise((resolve) => {
       let count = 0;

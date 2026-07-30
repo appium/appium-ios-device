@@ -1,8 +1,10 @@
+import {describe, it, afterEach} from 'node:test';
+
+import {expect} from 'chai';
+
 import InstallationServiceProxy from '../../lib/installation-proxy';
 import {PlistService} from '../../lib/plist-service';
 import {getServerWithFixtures, fixtures} from '../fixtures';
-import {describe, it, afterEach} from 'node:test';
-import {expect} from 'chai';
 
 describe('installation proxy', function () {
   let server;

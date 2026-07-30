@@ -1,8 +1,10 @@
-import {findDeveloperImage} from '../../lib/imagemounter/utils/list_developer_image';
-import {fs} from '@appium/support';
 import {describe, it} from 'node:test';
+
+import {fs} from '@appium/support';
 import {expect, use} from 'chai';
 import chaiAsPromised from 'chai-as-promised';
+
+import {findDeveloperImage} from '../../lib/imagemounter/utils/list_developer_image';
 
 use(chaiAsPromised);
 

@@ -1,6 +1,8 @@
-import {cleanupRpcObject} from '../../lib/webinspector';
 import {describe, it} from 'node:test';
+
 import {expect} from 'chai';
+
+import {cleanupRpcObject} from '../../lib/webinspector';
 
 describe('webinspector helpers', function () {
   it('should cleanup an rpc object', function () {

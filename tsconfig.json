@@ -1,16 +1,14 @@
 {
+  // Non-emitting shim so oxlint/editors auto-discovering "tsconfig.json" don't hit
+  // tsconfig.build.json's composite/declaration output, which conflicts with itself
+  // once `build` exists (oxlint's type-aware checker mistakes emitted .d.ts for inputs).
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "@appium/tsconfig/tsconfig.json",
+  "extends": "./tsconfig.build.json",
   "compilerOptions": {
-    "strict": false,  // TODO: make this flag true
-    "rootDir": ".",
-    "outDir": "build",
-    "types": ["node"],
-    "checkJs": true
-  },
-  "include": [
-    "index.js",
-    "lib",
-    "test"
-  ]
+    "composite": false,
+    "declaration": false,
+    "declarationMap": false,
+    "incremental": false,
+    "noEmit": true
+  }
 }
