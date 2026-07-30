@@ -1,7 +1,9 @@
-import {unarchive, archive, NSURL, NSUUID, NSDate} from '../../lib/instrument/transformer/nskeyed';
-import {util} from '@appium/support';
 import {describe, it} from 'node:test';
+
+import {util} from '@appium/support';
 import {expect} from 'chai';
+
+import {unarchive, archive, NSURL, NSUUID, NSDate} from '../../lib/instrument/transformer/nskeyed';
 
 describe('NSKeyedArchive', function () {
   it('should parses JavaScript objects into iOS NSKeyedArchive data', function () {

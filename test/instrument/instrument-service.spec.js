@@ -1,7 +1,9 @@
+import {describe, it, afterEach} from 'node:test';
+
+import {expect} from 'chai';
+
 import {InstrumentService, INSTRUMENT_CHANNEL} from '../../lib/instrument';
 import {getServerWithFixtures, fixtures} from '../fixtures';
-import {describe, it, afterEach} from 'node:test';
-import {expect} from 'chai';
 
 describe('instrument', function () {
   let server;
@@ -37,11 +39,7 @@ describe('instrument', function () {
   it('should ios device kill app ', async function () {
     ({server, socket} = await getServerWithFixtures(fixtures.INSTRUMENTS_LAUNCH_APP));
     instrumentService = new InstrumentService(socket);
-    await instrumentService.callChannel(
-      INSTRUMENT_CHANNEL.PROCESS_CONTROL,
-      'killPid:',
-      pid.toString(),
-    );
+    await instrumentService.callChannel(INSTRUMENT_CHANNEL.PROCESS_CONTROL, 'killPid:', pid.toString());
   });
 
   it('should ios device get fps', async function () {
@@ -53,11 +51,7 @@ describe('instrument', function () {
     }
     instrumentService = new InstrumentService(socket, message);
     const data = [];
-    await instrumentService.callChannel(
-      INSTRUMENT_CHANNEL.GRAPHICS_OPENGL,
-      'startSamplingAtTimeInterval:',
-      0,
-    );
+    await instrumentService.callChannel(INSTRUMENT_CHANNEL.GRAPHICS_OPENGL, 'startSamplingAtTimeInterval:', 0);
     await new Promise((resolve) => {
       setTimeout(() => {
         resolve(data);

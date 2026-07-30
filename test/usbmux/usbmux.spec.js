@@ -1,10 +1,12 @@
-import {Usbmux} from '../..';
-import {getServerWithFixtures, fixtures, UDID} from '../fixtures';
-import {plist} from '@appium/support';
 import {PassThrough} from 'node:stream';
 import {describe, it, afterEach} from 'node:test';
+
+import {plist} from '@appium/support';
 import {expect, use} from 'chai';
 import chaiAsPromised from 'chai-as-promised';
+
+import {Usbmux} from '../../lib/usbmux';
+import {getServerWithFixtures, fixtures, UDID} from '../fixtures';
 
 use(chaiAsPromised);
 
@@ -78,10 +80,7 @@ describe('usbmux', function () {
   });
 
   it('should switch decoders correctly', async function () {
-    ({server, socket} = await getServerWithFixtures(
-      fixtures.DEVICE_LIST,
-      fixtures.USBMUX_TO_LOCKDOWN,
-    ));
+    ({server, socket} = await getServerWithFixtures(fixtures.DEVICE_LIST, fixtures.USBMUX_TO_LOCKDOWN));
     usbmux = new Usbmux(socket);
 
     const lockdown = await usbmux.connectLockdown(UDID);

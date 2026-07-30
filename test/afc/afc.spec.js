@@ -1,7 +1,9 @@
+import {describe, it, afterEach} from 'node:test';
+
+import {expect} from 'chai';
+
 import {AfcService} from '../../lib/afc';
 import {getServerWithFixtures, fixtures} from '../fixtures';
-import {describe, it, afterEach} from 'node:test';
-import {expect} from 'chai';
 
 describe('afc', function () {
   let server;

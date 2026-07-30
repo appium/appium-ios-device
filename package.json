@@ -1,24 +1,19 @@
 {
   "name": "appium-ios-device",
+  "version": "3.1.19",
   "description": "Appium API for dealing with iOS devices",
   "keywords": [
     "appium"
   ],
-  "version": "3.1.19",
-  "author": "Appium Contributors",
+  "bugs": {
+    "url": "https://github.com/appium/appium-ios-device/issues"
+  },
   "license": "Apache-2.0",
+  "author": "Appium Contributors",
   "repository": {
     "type": "git",
     "url": "https://github.com/appium/appium-ios-device.git"
   },
-  "bugs": {
-    "url": "https://github.com/appium/appium-ios-device/issues"
-  },
-  "engines": {
-    "node": "^20.19.0 || ^22.12.0 || >=24.0.0",
-    "npm": ">=10"
-  },
-  "main": "./build/index.js",
   "bin": {},
   "directories": {
     "lib": "lib"
@@ -30,6 +25,18 @@
     "build/lib",
     "CHANGELOG.md"
   ],
+  "main": "./build/index.js",
+  "scripts": {
+    "build": "tsc -b",
+    "dev": "npm run build -- --watch",
+    "clean": "npm run build -- --clean",
+    "lint": "oxlint -c oxlint.config.mjs .",
+    "lint:fix": "oxlint -c oxlint.config.mjs --fix .",
+    "format": "oxfmt -c oxfmt.config.mjs .",
+    "format:check": "oxfmt -c oxfmt.config.mjs --check .",
+    "prepare": "npm run build",
+    "test": "node --test --enable-source-maps --test-force-exit --test-timeout=60000 \"./build/test/**/*.spec.js\""
+  },
   "dependencies": {
     "@appium/support": "^7.2.2",
     "asyncbox": "^6.0.1",
@@ -38,34 +45,17 @@
     "bplist-parser": "^0.x",
     "semver": "^7.0.0"
   },
-  "scripts": {
-    "build": "tsc -b",
-    "dev": "npm run build -- --watch",
-    "clean": "npm run build -- --clean",
-    "lint": "eslint .",
-    "lint:fix": "npm run lint -- --fix",
-    "format": "prettier -w ./lib ./test",
-    "format:check": "prettier --check ./lib ./test",
-    "prepare": "npm run build",
-    "test": "node --test --enable-source-maps --test-force-exit --test-timeout=60000 \"./build/test/**/*.spec.js\""
-  },
-  "prettier": {
-    "bracketSpacing": false,
-    "printWidth": 100,
-    "singleQuote": true
-  },
   "devDependencies": {
-    "@appium/eslint-config-appium-ts": "^3.0.0",
-    "@appium/tsconfig": "^1.0.0-rc.1",
+    "@appium/oxc-config": "^1.1.0",
+    "@appium/semantic-release-config": "^1.1.0",
+    "@appium/tsconfig": "^1.2.0",
     "@appium/types": "^1.0.0-rc.1",
-    "@semantic-release/changelog": "^6.0.1",
-    "@semantic-release/git": "^10.0.1",
     "@types/node": "^26.0.0",
     "chai": "^6.0.0",
-    "chai-as-promised": "^8.0.0",
-    "conventional-changelog-conventionalcommits": "^9.3.1",
-    "prettier": "^3.0.0",
-    "semantic-release": "^25.0.2",
-    "typescript": "^6.0.3"
+    "chai-as-promised": "^8.0.0"
+  },
+  "engines": {
+    "node": "^20.19.0 || ^22.12.0 || >=24.0.0",
+    "npm": ">=10"
   }
 }

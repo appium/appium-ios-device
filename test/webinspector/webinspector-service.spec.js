@@ -1,7 +1,9 @@
+import {describe, it, afterEach} from 'node:test';
+
 import * as semver from 'semver';
+
 import {WebInspectorService} from '../../lib/webinspector';
 import {getServerWithFixtures, fixtures} from '../fixtures';
-import {describe, it, afterEach} from 'node:test';
 
 describe('webinspector', function () {
   let server;

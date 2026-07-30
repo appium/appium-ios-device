@@ -2,15 +2,11 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "@appium/tsconfig/tsconfig.json",
   "compilerOptions": {
-    "strict": false,  // TODO: make this flag true
+    "strict": false, // TODO: make this flag true
     "rootDir": ".",
     "outDir": "build",
     "types": ["node"],
     "checkJs": true
   },
-  "include": [
-    "index.js",
-    "lib",
-    "test"
-  ]
+  "include": ["index.js", "lib", "test"]
 }
