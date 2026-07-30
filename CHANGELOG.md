@@ -1,3 +1,9 @@
+## [3.1.20](https://github.com/appium/appium-ios-device/compare/v3.1.19...v3.1.20) (2026-07-30)
+
+### Miscellaneous Chores
+
+* Integrate oxc and release configs ([#240](https://github.com/appium/appium-ios-device/issues/240)) ([ba492be](https://github.com/appium/appium-ios-device/commit/ba492be2116fcb696beb44bb585a7353bb4cbc73))
+
 ## [3.1.19](https://github.com/appium/appium-ios-device/compare/v3.1.18...v3.1.19) (2026-07-21)
 
 ### Miscellaneous Chores
