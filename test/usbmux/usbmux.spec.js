@@ -5,7 +5,7 @@ import {plist} from '@appium/support';
 import {expect, use} from 'chai';
 import chaiAsPromised from 'chai-as-promised';
 
-import {Usbmux} from '../..';
+import {Usbmux} from '../../lib/usbmux';
 import {getServerWithFixtures, fixtures, UDID} from '../fixtures';
 
 use(chaiAsPromised);

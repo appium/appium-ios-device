@@ -2,7 +2,7 @@ import {describe, it, afterEach} from 'node:test';
 
 import {expect} from 'chai';
 
-import {utilities} from '..';
+import * as utilities from '../lib/utilities';
 import {getServerWithFixtures, fixtures, UDID} from './fixtures';
 
 describe('utilities', function () {
