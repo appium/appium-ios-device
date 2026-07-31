@@ -1,12 +1,11 @@
+import assert from 'node:assert/strict';
 import {describe, it} from 'node:test';
-
-import {expect} from 'chai';
 
 import {cleanupRpcObject} from '../../lib/webinspector';
 
 describe('webinspector helpers', function () {
   it('should cleanup an rpc object', function () {
-    expect(
+    assert.deepStrictEqual(
       cleanupRpcObject({
         bar: false,
         baz: null,
@@ -17,16 +16,17 @@ describe('webinspector helpers', function () {
           c: [1, 2, null],
         },
       }),
-    ).to.eql({
-      bar: false,
-      obj: {
-        b: 'string',
-        c: [1, 2],
+      {
+        bar: false,
+        obj: {
+          b: 'string',
+          c: [1, 2],
+        },
       },
-    });
+    );
   });
 
   it('should leave an rpc object unchanged if nil', function () {
-    expect(cleanupRpcObject(null)).to.be.null;
+    assert.strictEqual(cleanupRpcObject(null), null);
   });
 });

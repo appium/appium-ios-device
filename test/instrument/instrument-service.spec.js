@@ -1,6 +1,5 @@
+import assert from 'node:assert/strict';
 import {describe, it, afterEach} from 'node:test';
-
-import {expect} from 'chai';
 
 import {InstrumentService, INSTRUMENT_CHANNEL} from '../../lib/instrument';
 import {getServerWithFixtures, fixtures} from '../fixtures';
@@ -33,7 +32,7 @@ describe('instrument', function () {
       [],
       {StartSuspendedKey: 0, KillExisting: 1},
     );
-    expect(data.selector).to.equal(pid);
+    assert.strictEqual(data.selector, pid);
   });
 
   it('should ios device kill app ', async function () {
@@ -57,6 +56,6 @@ describe('instrument', function () {
         resolve(data);
       }, 2000);
     });
-    expect(data).to.deep.equal([0, 51, 59, 60]);
+    assert.deepStrictEqual(data, [0, 51, 59, 60]);
   });
 });

@@ -1,12 +1,9 @@
+import assert from 'node:assert/strict';
 import {describe, it} from 'node:test';
 
 import {fs} from '@appium/support';
-import {expect, use} from 'chai';
-import chaiAsPromised from 'chai-as-promised';
 
 import {findDeveloperImage} from '../../lib/imagemounter/utils/list_developer_image';
-
-use(chaiAsPromised);
 
 describe('findDeveloperImage', function () {
   it('should download and return the correct developer image for a given version', async function () {
@@ -15,19 +12,20 @@ describe('findDeveloperImage', function () {
       subFolderList: ['test', 'imagemounter'],
       branch: 'master',
     });
-    expect(result.developerImage.endsWith('/DeveloperDiskImage.dmg')).to.be.true;
-    expect(result.developerImageSignature.endsWith('/DeveloperDiskImage.dmg.signature')).to.be.true;
-    expect(await fs.exists(result.developerImage)).to.be.true;
-    expect(await fs.exists(result.developerImageSignature)).to.be.true;
+    assert.strictEqual(result.developerImage.endsWith('/DeveloperDiskImage.dmg'), true);
+    assert.strictEqual(result.developerImageSignature.endsWith('/DeveloperDiskImage.dmg.signature'), true);
+    assert.strictEqual(await fs.exists(result.developerImage), true);
+    assert.strictEqual(await fs.exists(result.developerImageSignature), true);
   });
 
   it('should throw an error if the developer image cannot be found', async function () {
-    await expect(
+    await assert.rejects(
       findDeveloperImage('99.99.99', {
         githubRepo: 'appium/appium-ios-device',
         subFolderList: ['test', 'imagemounter'],
         branch: 'master',
       }),
-    ).to.eventually.be.rejectedWith('Failed to get developer image for iOS 99.99');
+      /Failed to get developer image for iOS 99\.99/,
+    );
   });
 });

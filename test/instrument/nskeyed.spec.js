@@ -1,7 +1,7 @@
+import assert from 'node:assert/strict';
 import {describe, it} from 'node:test';
 
 import {util} from '@appium/support';
-import {expect} from 'chai';
 
 import {unarchive, archive, NSURL, NSUUID, NSDate} from '../../lib/instrument/transformer/nskeyed';
 
@@ -70,7 +70,7 @@ describe('NSKeyedArchive', function () {
     };
     const archiveData = archive(data);
     const unArchiveData = unarchive(archiveData);
-    expect(unArchiveData).to.deep.equal(data);
+    assert.deepStrictEqual(unArchiveData, data);
   });
 
   it('NSKeyedArchive encode/decode for NSURL', function () {
@@ -78,7 +78,7 @@ describe('NSKeyedArchive', function () {
     const data = {NSURL: new NSURL(null, file)};
     const archiveData = archive(data);
     const unArchiveData = unarchive(archiveData);
-    expect(unArchiveData.NSURL.relative).to.be.equal(file);
+    assert.strictEqual(unArchiveData.NSURL.relative, file);
   });
 
   it('NSKeyedArchive encode/decode for NSUUID', function () {
@@ -86,7 +86,7 @@ describe('NSKeyedArchive', function () {
     const data = {NSUUID: new NSUUID(uuid)};
     const archiveData = archive(data);
     const unArchiveData = unarchive(archiveData);
-    expect(unArchiveData.NSUUID).to.be.equal(uuid);
+    assert.strictEqual(unArchiveData.NSUUID, uuid);
   });
 
   it('NSKeyedArchive encode/decode for NSDate', function () {
@@ -94,6 +94,6 @@ describe('NSKeyedArchive', function () {
     const data = {NSDate: new NSDate(date)};
     const archiveData = archive(data);
     const unArchiveData = unarchive(archiveData);
-    expect(unArchiveData.NSDate).to.be.equal(date);
+    assert.strictEqual(unArchiveData.NSDate, date);
   });
 });
