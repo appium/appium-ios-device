@@ -1,6 +1,6 @@
 {
   "name": "appium-ios-device",
-  "version": "3.1.20",
+  "version": "3.1.21",
   "description": "Appium API for dealing with iOS devices",
   "keywords": [
     "appium"

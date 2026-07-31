@@ -1,3 +1,9 @@
+## [3.1.21](https://github.com/appium/appium-ios-device/compare/v3.1.20...v3.1.21) (2026-07-31)
+
+### Miscellaneous Chores
+
+* Drop chai ([#241](https://github.com/appium/appium-ios-device/issues/241)) ([2158d0e](https://github.com/appium/appium-ios-device/commit/2158d0e13d01b6c5ec05735984ed2edb47d2e280))
+
 ## [3.1.20](https://github.com/appium/appium-ios-device/compare/v3.1.19...v3.1.20) (2026-07-30)
 
 ### Miscellaneous Chores
