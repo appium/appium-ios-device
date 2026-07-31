@@ -18,7 +18,7 @@ describe('utilities', function () {
     ({server, socket} = await getServerWithFixtures(fixtures.DEVICE_LIST));
     const udids = await utilities.getConnectedDevices(socket);
     assert.strictEqual(udids.length, 1);
-    assert.deepStrictEqual(udids[0], UDID);
+    assert.strictEqual(udids[0], UDID);
   });
 
   it('should get product version', async function () {

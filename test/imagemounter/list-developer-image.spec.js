@@ -12,10 +12,10 @@ describe('findDeveloperImage', function () {
       subFolderList: ['test', 'imagemounter'],
       branch: 'master',
     });
-    assert.strictEqual(result.developerImage.endsWith('/DeveloperDiskImage.dmg'), true);
-    assert.strictEqual(result.developerImageSignature.endsWith('/DeveloperDiskImage.dmg.signature'), true);
-    assert.strictEqual(await fs.exists(result.developerImage), true);
-    assert.strictEqual(await fs.exists(result.developerImageSignature), true);
+    assert.ok(result.developerImage.endsWith('/DeveloperDiskImage.dmg'));
+    assert.ok(result.developerImageSignature.endsWith('/DeveloperDiskImage.dmg.signature'));
+    assert.ok(await fs.exists(result.developerImage));
+    assert.ok(await fs.exists(result.developerImageSignature));
   });
 
   it('should throw an error if the developer image cannot be found', async function () {
