@@ -1,6 +1,5 @@
+import assert from 'node:assert/strict';
 import {describe, it, afterEach} from 'node:test';
-
-import {expect} from 'chai';
 
 import {AfcService} from '../../lib/afc';
 import {getServerWithFixtures, fixtures} from '../fixtures';
@@ -33,19 +32,19 @@ describe('afc', function () {
     ({server, socket} = await getServerWithFixtures(fixtures.AFC_LIST_DIR_RESPONSE));
     service = new AfcService(socket);
     const items = await service.listDirectory('/');
-    expect(items).to.contain('Photos');
+    assert.ok(items.includes('Photos'));
   });
 
   it('should get file info', async function () {
     ({server, socket} = await getServerWithFixtures(fixtures.AFC_FILE_INFO_RESPONSE));
     service = new AfcService(socket);
     const info = await service.getFileInfo('Photos');
-    expect(info.birthtimeMs).to.be.equal(1494244521000);
-    expect(info.blocks).to.be.equal(0);
-    expect(info.mtimeMs).to.be.equal(1494244521000);
-    expect(info.nlink).to.be.equal(2);
-    expect(info.size).to.be.equal(64);
-    expect(info.isDirectory()).to.be.equal(true);
-    expect(info.isFile()).to.be.equal(false);
+    assert.strictEqual(info.birthtimeMs, 1494244521000);
+    assert.strictEqual(info.blocks, 0);
+    assert.strictEqual(info.mtimeMs, 1494244521000);
+    assert.strictEqual(info.nlink, 2);
+    assert.strictEqual(info.size, 64);
+    assert.strictEqual(info.isDirectory(), true);
+    assert.strictEqual(info.isFile(), false);
   });
 });

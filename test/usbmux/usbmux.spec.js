@@ -1,14 +1,11 @@
+import assert from 'node:assert/strict';
 import {PassThrough} from 'node:stream';
 import {describe, it, afterEach} from 'node:test';
 
 import {plist} from '@appium/support';
-import {expect, use} from 'chai';
-import chaiAsPromised from 'chai-as-promised';
 
 import {Usbmux} from '../../lib/usbmux';
 import {getServerWithFixtures, fixtures, UDID} from '../fixtures';
-
-use(chaiAsPromised);
 
 describe('usbmux', function () {
   let usbmux;
@@ -41,14 +38,14 @@ describe('usbmux', function () {
     usbmux = new Usbmux(socket);
 
     let devices = await usbmux.listDevices();
-    expect(devices.length).to.be.equal(1);
+    assert.strictEqual(devices.length, 1);
   });
 
   it('should fail due to timeout', async function () {
     ({server, socket} = await getServerWithFixtures());
     usbmux = new Usbmux(socket);
 
-    await expect(usbmux.listDevices(-1)).to.eventually.be.rejectedWith();
+    await assert.rejects(usbmux.listDevices(-1));
   });
 
   it.skip('should read concatenated message', async function () {
@@ -56,12 +53,12 @@ describe('usbmux', function () {
     usbmux = new Usbmux(socket);
 
     let devices = await usbmux.listDevices();
-    expect(devices.length).to.be.equal(1);
-    expect(devices[0].DeviceID).to.be.equal(1);
+    assert.strictEqual(devices.length, 1);
+    assert.strictEqual(devices[0].DeviceID, 1);
 
     devices = await usbmux.listDevices();
-    expect(devices.length).to.be.equal(1);
-    expect(devices[0].DeviceID).to.be.equal(2);
+    assert.strictEqual(devices.length, 1);
+    assert.strictEqual(devices[0].DeviceID, 2);
   });
 
   it('should find correct device', async function () {
@@ -69,7 +66,7 @@ describe('usbmux', function () {
     usbmux = new Usbmux(socket);
 
     let device = await usbmux.findDevice(UDID);
-    expect(device.Properties.SerialNumber).to.be.equal(UDID);
+    assert.strictEqual(device.Properties.SerialNumber, UDID);
   });
 
   it('should connect to correct device', async function () {
@@ -116,6 +113,6 @@ describe('usbmux', function () {
     usbmux._sendPlist = () => {};
 
     const result = await usbmux.readPairRecord(UDID);
-    expect(result).to.deep.equal(pairRecord);
+    assert.deepStrictEqual(result, pairRecord);
   });
 });

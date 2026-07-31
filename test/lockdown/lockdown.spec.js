@@ -1,13 +1,9 @@
+import assert from 'node:assert/strict';
 import {describe, it, afterEach} from 'node:test';
-
-import {expect, use} from 'chai';
-import chaiAsPromised from 'chai-as-promised';
 
 import {Lockdown} from '../../lib/lockdown';
 import {PlistService} from '../../lib/plist-service';
 import {getServerWithFixtures, fixtures} from '../fixtures';
-
-use(chaiAsPromised);
 
 describe('lockdown', function () {
   let server;
@@ -48,7 +44,7 @@ describe('lockdown', function () {
   it('should fail due to timeout', async function () {
     ({server, socket} = await getServerWithFixtures());
     lockdown = new Lockdown(new PlistService(socket));
-    await expect(lockdown.getValue({Key: 'ProductName'}, -1)).to.eventually.be.rejectedWith();
+    await assert.rejects(lockdown.getValue({Key: 'ProductName'}, -1));
   });
 
   it('should get lockdown query type', async function () {
@@ -64,6 +60,6 @@ describe('lockdown', function () {
     const epochValue = await lockdown.getValue({Key: 'TimeIntervalSince1970'});
     const date = new Date(0); // The 0 there is the key, which sets the date to the epoch
     date.setUTCSeconds(epochValue);
-    expect(date.getUTCFullYear()).to.be.eq(2019);
+    assert.strictEqual(date.getUTCFullYear(), 2019);
   });
 });

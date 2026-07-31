@@ -1,6 +1,5 @@
+import assert from 'node:assert/strict';
 import {describe, it, afterEach} from 'node:test';
-
-import {expect} from 'chai';
 
 import {SyslogService} from '../../lib/syslog';
 import {toUtf8String} from '../../lib/syslog/transformer/syslog-decoder';
@@ -50,6 +49,6 @@ describe('syslog', function () {
     const result = toUtf8String(
       Buffer.from('C\\M-C\\M-3 Th\\M-a\\M-;\\M^C B\\M-a\\M-:\\M-!n Quan T\\M-C\\M-"m', 'utf8'),
     );
-    expect(result).to.eql('Có Thể Bạn Quan Tâm');
+    assert.strictEqual(result, 'Có Thể Bạn Quan Tâm');
   });
 });
