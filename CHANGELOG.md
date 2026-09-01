@@ -1,3 +1,9 @@
+## [3.1.22](https://github.com/appium/appium-ios-device/compare/v3.1.21...v3.1.22) (2026-09-01)
+
+### Miscellaneous Chores
+
+* bump support & other deps ([#242](https://github.com/appium/appium-ios-device/issues/242)) ([c45303c](https://github.com/appium/appium-ios-device/commit/c45303c2e82d8a400532a2815d657dec66655ce3))
+
 ## [3.1.21](https://github.com/appium/appium-ios-device/compare/v3.1.20...v3.1.21) (2026-07-31)
 
 ### Miscellaneous Chores
