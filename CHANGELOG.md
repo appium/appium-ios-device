@@ -1,3 +1,9 @@
+## [3.1.24](https://github.com/appium/appium-ios-device/compare/v3.1.23...v3.1.24) (2026-09-25)
+
+### Bug Fixes
+
+* load UID from bplist-parser namespace ([#246](https://github.com/appium/appium-ios-device/issues/246)) ([72ce1ad](https://github.com/appium/appium-ios-device/commit/72ce1ad88ac868265505240d58e25ea7c66e6177))
+
 ## [3.1.23](https://github.com/appium/appium-ios-device/compare/v3.1.22...v3.1.23) (2026-09-01)
 
 ### Miscellaneous Chores
