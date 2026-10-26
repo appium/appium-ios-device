@@ -1,10 +1,11 @@
 import assert from 'node:assert/strict';
+import net from 'node:net';
 import {PassThrough} from 'node:stream';
 import {describe, it, afterEach} from 'node:test';
 
-import {plist} from '@appium/support';
+import {plist, tempDir} from '@appium/support';
 
-import {Usbmux} from '../../lib/usbmux';
+import {Usbmux, getDefaultSocket} from '../../lib/usbmux';
 import {getServerWithFixtures, fixtures, UDID} from '../fixtures';
 
 describe('usbmux', function () {
@@ -114,5 +115,25 @@ describe('usbmux', function () {
 
     const result = await usbmux.readPairRecord(UDID);
     assert.deepStrictEqual(result, pairRecord);
+  });
+
+  it('should connect via getDefaultSocket using USBMUXD_SOCKET_ADDRESS when only timeout is provided', async function () {
+    const tmpSocket = await tempDir.path({prefix: 'usbmux', suffix: '.sock'});
+    const originalEnv = process.env.USBMUXD_SOCKET_ADDRESS;
+    server = net.createServer();
+    await new Promise((resolve) => server.listen(tmpSocket, resolve));
+    process.env.USBMUXD_SOCKET_ADDRESS = `unix:${tmpSocket}`;
+
+    try {
+      socket = await getDefaultSocket({timeout: 2000});
+      assert.ok(socket);
+      socket.destroy();
+    } finally {
+      if (originalEnv === undefined) {
+        delete process.env.USBMUXD_SOCKET_ADDRESS;
+      } else {
+        process.env.USBMUXD_SOCKET_ADDRESS = originalEnv;
+      }
+    }
   });
 });
