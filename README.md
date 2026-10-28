@@ -122,3 +122,4 @@ async function checkAndMountDeveloperImage(udid) {
 ``` shell
 npm test
 ```
+
