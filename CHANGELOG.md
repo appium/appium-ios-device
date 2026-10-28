@@ -1,3 +1,9 @@
+## [3.1.25](https://github.com/appium/appium-ios-device/compare/v3.1.24...v3.1.25) (2026-10-28)
+
+### Miscellaneous Chores
+
+* release a module with newer dependencies ([7f1b1e3](https://github.com/appium/appium-ios-device/commit/7f1b1e3a946c976dcfcf49713da67ca29d3685c4))
+
 ## [3.1.24](https://github.com/appium/appium-ios-device/compare/v3.1.23...v3.1.24) (2026-09-25)
 
 ### Bug Fixes
