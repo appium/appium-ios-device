@@ -1,3 +1,9 @@
+## [3.1.26](https://github.com/appium/appium-ios-device/compare/v3.1.25...v3.1.26) (2026-10-28)
+
+### Miscellaneous Chores
+
+* bump the appium/support to install the version explicitly in the packaging ([e8f8429](https://github.com/appium/appium-ios-device/commit/e8f84294991ee4e28de1bd010b54d8b76465148e))
+
 ## [3.1.25](https://github.com/appium/appium-ios-device/compare/v3.1.24...v3.1.25) (2026-10-28)
 
 ### Miscellaneous Chores
