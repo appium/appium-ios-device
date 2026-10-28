@@ -38,7 +38,7 @@
     "test": "node --test --enable-source-maps --test-force-exit --test-timeout=60000 \"./build/test/**/*.spec.js\""
   },
   "dependencies": {
-    "@appium/support": "^7.2.6",
+    "@appium/support": "^7.2.9",
     "asyncbox": "^6.4.3",
     "axios": "^1.18.0",
     "bplist-creator": "^0.x",
