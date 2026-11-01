@@ -1,5 +1,8 @@
 # appium-ios-device
 
+> [!WARNING]
+> This package is deprecated and no longer maintained. It has been replaced by [remotexpc](https://github.com/appium/appium-ios/tree/main/packages/remotexpc).
+
 [![NPM version](http://img.shields.io/npm/v/appium-ios-device.svg)](https://npmjs.org/package/appium-ios-device)
 [![Downloads](http://img.shields.io/npm/dm/appium-ios-device.svg)](https://npmjs.org/package/appium-ios-device)
 
