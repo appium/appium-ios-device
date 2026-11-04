@@ -13,14 +13,14 @@ describe('webinspector helpers', function () {
         obj: {
           a: null,
           b: 'string',
-          c: [1, 2, null],
+          c: [1, 2, null, {nestedKey: 'val', emptyKey: null, deepArr: [null, 'ok', undefined]}],
         },
       }),
       {
         bar: false,
         obj: {
           b: 'string',
-          c: [1, 2],
+          c: [1, 2, {nestedKey: 'val', deepArr: ['ok']}],
         },
       },
     );
